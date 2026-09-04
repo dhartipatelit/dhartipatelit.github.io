@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharti Patel — UI/UX Designer</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&family=Sacramento&display=swap');
+
+:root{
+  --charcoal:#1C1C1C;
+  --deep:#141414;
+  --ivory:#F7F5F2;
+  --grey:#A8A8A8;
+  --lavender:#8B7BBE;
+  --line:rgba(247,245,242,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--deep);color:var(--ivory);font-family:"DM Sans",sans-serif}
+a{text-decoration:none;color:inherit}
+.shell{display:grid;grid-template-columns:200px 1fr;min-height:100vh}
+.sidebar{position:fixed;top:0;bottom:0;width:200px;border-right:1px solid var(--line);padding:52px 32px;display:flex;flex-direction:column;background:#171717;z-index:10}
+.logo{font-family:"Playfair Display";font-size:56px;line-height:.7;margin-bottom:80px}
+.logo i{font-style:normal;color:var(--lavender);font-size:28px}
+.nav{display:flex;flex-direction:column;gap:22px}
+.nav a{color:#bdbdbd;font-size:15px;transition:.25s}
+.nav a:hover,.nav a.active{color:#fff}
+.nav a.active:before{content:"✦";color:var(--lavender);margin-right:12px}
+.side-bottom{margin-top:auto;color:#777;font-size:12px;line-height:2}
+main{grid-column:2;overflow:hidden}
+section{padding:85px 7vw}
+.label{font-size:11px;letter-spacing:3px;color:#b6a7df;text-transform:uppercase;margin-bottom:22px}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr .95fr;gap:45px;align-items:center;padding-top:70px}
+.hero h1{font-family:"Playfair Display";font-size:clamp(64px,8vw,118px);font-weight:500;line-height:.92;margin:0}
+.role{font-size:30px;color:#b7a9dd;margin:22px 0 28px}
+.intro{max-width:530px;color:#b8b8b8;font-size:18px;line-height:1.8}
+.actions{display:flex;gap:32px;align-items:center;margin-top:38px}
+.btn{padding:17px 28px;background:var(--lavender);color:white;border-radius:3px;transition:.25s}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
+.text-btn{border-bottom:1px solid #777;padding-bottom:7px}
+.hero-art{position:relative;height:580px}
+.portrait{height:82%;width:75%;margin:auto;background:linear-gradient(145deg,#d5d2cd,#8e8c8a 45%,#252525 46%,#111);border-radius:25px;position:relative;overflow:hidden}
+.portrait:after{content:"";position:absolute;width:230px;height:230px;border-radius:50%;background:rgba(139,123,190,.82);right:-70px;top:150px}
+.quote-card{position:absolute;right:0;bottom:15px;width:270px;background:var(--ivory);color:#292929;padding:38px;border-radius:25px;font-size:16px;line-height:1.55;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.signature{font-family:"Sacramento",cursive;font-size:38px;margin-top:18px;color:#2d2a30}
+.signature span{color:var(--lavender);font-family:"DM Sans";font-size:16px}
+.work-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:32px}
+h2{font-family:"Playfair Display";font-size:clamp(42px,5vw,70px);font-weight:500;margin:0;line-height:1.05}
+.muted{color:var(--grey);line-height:1.7}
+.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{border:1px solid var(--line);border-radius:15px;overflow:hidden;background:#181818;transition:.3s}
+.project:hover{transform:translateY(-7px);border-color:rgba(139,123,190,.65)}
+.thumb{height:245px;background:linear-gradient(135deg,#e6e2db,#aaa49c)}
+.project:nth-child(2) .thumb{background:linear-gradient(135deg,#252525,#777)}
+.project:nth-child(3) .thumb{background:linear-gradient(135deg,#e8e4dd,#9f98b2)}
+.project-info{padding:20px}
+.project-info h3{margin:0 0 10px;font-size:18px;font-weight:500}
+.tags{font-size:11px;letter-spacing:1px;color:#ae9fd4}
+.about{background:var(--ivory);color:var(--charcoal);display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center}
+.about .label{color:#766c95}
+.about h2{max-width:620px}
+.about p{font-size:17px;line-height:1.85;color:#555;max-width:620px}
+.values{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:35px}
+.value b{display:block;margin-bottom:7px;letter-spacing:1px}
+.value span{color:#777;font-size:14px}
+.about-art{height:470px;border-radius:25px;background:#ddd;position:relative;overflow:hidden}.about-art img{width:100%;height:100%;object-fit:cover;display:block}
+.about-art img{width:100%;height:100%;object-fit:cover;display:block}
+
+.philosophy{text-align:center;padding:140px 10vw;background:linear-gradient(180deg,#151515,#1d1a23)}
+.philosophy blockquote{font-family:"Playfair Display";font-size:clamp(38px,5vw,78px);line-height:1.2;margin:0 auto;max-width:1050px}
+.philosophy .label{margin-top:40px}
+.process-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.step{padding:32px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:200px}
+.step:nth-child(3n){border-right:none}
+.num{color:var(--lavender);font-size:13px;letter-spacing:2px}
+.step h3{font-size:21px;font-weight:500;margin:30px 0 12px}
+.skills{background:#181818}
+.skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:45px;margin-top:55px}
+.skill-box{border-top:1px solid var(--lavender);padding-top:22px}
+.skill-box h3{font-family:"Playfair Display";font-size:30px;font-weight:500}
+.skill-box p{color:#aaa;line-height:2}
+.personal{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.personal-card{min-height:420px;border-radius:25px;background:linear-gradient(145deg,#29252e,#161616);padding:45px;display:flex;align-items:end}
+.personal-card p{font-family:"Playfair Display";font-size:38px;line-height:1.25;margin:0}
+.contact{background:var(--ivory);color:var(--charcoal);text-align:center;padding:130px 7vw}
+.contact h2{font-size:clamp(50px,8vw,105px);max-width:1000px;margin:auto}
+.contact p{color:#666;font-size:18px;margin:28px auto 40px;max-width:600px;line-height:1.7}
+.contact-links{display:flex;justify-content:center;gap:28px;flex-wrap:wrap}
+.contact-links a{padding-bottom:5px;border-bottom:1px solid #888}
+footer{background:var(--charcoal);padding:25px 7vw;color:#777;font-size:13px}
+
+@media(max-width:900px){
+ .shell{display:block}.sidebar{position:sticky;top:0;width:100%;height:70px;padding:0 22px;flex-direction:row;align-items:center;border-bottom:1px solid var(--line);border-right:0}.logo{font-size:36px;margin:0}.nav{margin-left:auto;flex-direction:row;gap:15px}.nav a{font-size:12px}.side-bottom{display:none}
+ main{display:block}.hero,.about,.personal{grid-template-columns:1fr}.hero{padding-top:60px}.hero-art{height:500px}.projects,.skill-grid{grid-template-columns:1fr}.process-grid{grid-template-columns:1fr}.step{border-right:none}.about-art{height:330px}
+}
+@media(max-width:520px){section{padding:70px 24px}.nav a:not(.active){display:none}.hero h1{font-size:64px}.role{font-size:24px}.hero-art{height:420px}.portrait{width:85%;height:78%}.quote-card{width:230px;padding:25px}.actions{gap:18px}.values{grid-template-columns:1fr}.personal{gap:35px}}
+
+.project .thumb{height:250px;overflow:hidden;background:#eee}
+.project .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.project-actions{display:flex;gap:18px;align-items:center;margin-top:16px;font-size:12px}
+.project-actions a{color:#e8e3f0;border-bottom:1px solid #777;padding-bottom:4px}
+.project-actions a.primary{color:#b7a9dd}
+
+
+.project-cover{height:250px;overflow:hidden;background:#eee}
+.project-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.project-info p{margin:12px 0 0;font-size:13px;line-height:1.6}
+.project-actions{display:flex;gap:18px;align-items:center;margin-top:16px;font-size:12px}
+.project-actions a{color:#e8e3f0;border-bottom:1px solid #777;padding-bottom:4px}
+.project-actions a.primary{color:#b7a9dd}
+
+
+.contact-grid{max-width:1180px;margin:70px auto 0;display:grid;grid-template-columns:.78fr 1.22fr;gap:55px;text-align:left}
+.contact-info{padding-top:5px}
+.contact-info>.label{margin-bottom:22px}
+.contact-item{display:flex;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid #ddd;transition:.2s}
+.contact-item:hover{transform:translateX(4px)}
+.contact-icon{width:38px;height:38px;border-radius:50%;background:#ece8f5;color:#6f60a5;display:grid;place-items:center;font-size:13px;font-weight:600;flex:none}
+.contact-item small{display:block;color:#888;font-size:9px;letter-spacing:2px;margin-bottom:5px}
+.contact-item strong{display:block;font-size:14px;font-weight:500;color:#282828;overflow-wrap:anywhere}
+.availability-card{margin-top:28px;background:#f0ede8;border-radius:16px;padding:20px;display:flex;flex-direction:column;gap:8px}
+.availability-card b{font-size:13px}
+.availability-card span{font-size:13px;color:#666;line-height:1.6}
+.inquiry-form{background:#fff;border:1px solid #dedbd6;border-radius:22px;padding:30px;box-shadow:0 16px 45px rgba(28,28,28,.08)}
+.inquiry-form label{display:block;color:#333;font-size:12px;font-weight:500;margin-bottom:18px}
+.inquiry-form label span{color:#7b68b2}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.inquiry-form input,.inquiry-form select,.inquiry-form textarea{display:block;width:100%;margin-top:8px;border:1px solid #dad7d2;border-radius:10px;background:#faf9f7;color:#222;font:inherit;padding:13px 14px;outline:none;transition:.2s}
+.inquiry-form input:focus,.inquiry-form select:focus,.inquiry-form textarea:focus{border-color:#8b7bbe;box-shadow:0 0 0 3px rgba(139,123,190,.10)}
+.inquiry-form textarea{resize:vertical;min-height:145px}
+.form-submit{border:0;cursor:pointer;margin-top:2px;width:auto}
+.form-note{font-size:11px;color:#8a8a8a;margin:12px 0 0}.inquiry-form:has(button:focus-visible){box-shadow:0 0 0 3px rgba(139,123,190,.12)}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr;gap:35px}.form-row{grid-template-columns:1fr}}
+
+
+.resume{background:#202020;display:grid;grid-template-columns:1.15fr .85fr;gap:70px;align-items:center;padding:95px 7vw}
+.resume h2{max-width:680px}
+.resume-copy .btn{display:inline-block;margin-top:28px}
+.resume-link{display:inline-block;margin-left:24px;border-bottom:1px solid #777;padding-bottom:6px;color:#ddd}
+.resume-card{min-height:300px;border:1px solid rgba(247,245,242,.16);border-radius:20px;background:#181818;padding:34px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden}
+.resume-card:before{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:rgba(139,123,190,.18);right:-70px;top:-70px}
+.resume-card>span{width:max-content;padding:7px 12px;border-radius:6px;background:#ebe7f2;color:#6f5ea8;font-size:11px;letter-spacing:2px;font-weight:600}
+.resume-card strong{font-family:"Playfair Display";font-size:44px;font-weight:500;margin-top:45px}
+.resume-card small{color:#aaa;margin-top:6px}
+.resume-lines{width:100%;height:72px;margin-top:24px;background:repeating-linear-gradient(to bottom,rgba(247,245,242,.13) 0,rgba(247,245,242,.13) 1px,transparent 1px,transparent 12px)}
+@media(max-width:900px){.resume{grid-template-columns:1fr}.resume-link{margin-left:16px}}
+
+
+/* Smart navigation + interaction system */
+.nav{position:relative}
+.nav a{position:relative;transition:color .3s ease,transform .25s ease;padding-left:26px}
+.nav a.active{color:#fff}
+.nav a.active:before{content:"✦";position:absolute;left:0;top:50%;transform:translateY(-50%) scale(1);color:var(--lavender);font-size:15px;line-height:1;animation:sparkleIn .55s cubic-bezier(.2,.8,.2,1),sparklePulse 2.4s ease-in-out .55s infinite}
+.nav a:hover{transform:translateX(4px);color:#fff}
+@keyframes sparkleIn{0%{opacity:0;transform:translate(-10px,-50%) scale(.3) rotate(-80deg)}70%{opacity:1;transform:translate(2px,-50%) scale(1.25) rotate(10deg)}100%{opacity:1;transform:translate(0,-50%) scale(1) rotate(0)}}
+@keyframes sparklePulse{0%,100%{text-shadow:0 0 0 rgba(139,123,190,0)}50%{text-shadow:0 0 12px rgba(139,123,190,.8)}}
+.nav a::after{content:"";position:absolute;left:26px;right:0;bottom:-6px;height:1px;background:var(--lavender);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1)}
+section{scroll-margin-top:80px;transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}
+section.reveal{opacity:0;transform:translateY(22px)}
+section.reveal.is-visible{opacity:1;transform:translateY(0)}
+.btn,.text-btn,.project,.contact-item,.resume-link{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+.btn:active,.text-btn:active,.resume-link:active{transform:translateY(1px) scale(.985)}
+.project:active{transform:translateY(-2px) scale(.995)}
+a,.btn,button,select,input,textarea{ -webkit-tap-highlight-color:transparent }
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.32);transform:scale(0);animation:ripple .6s ease-out;pointer-events:none}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  section.reveal{opacity:1;transform:none}
+}
+@media(max-width:900px){
+  .nav a{padding-left:0}
+  .nav a.active:before{display:none}
+  .nav a::after{left:0}
+}
+
+
+/* FINAL NAVIGATION ANIMATION FIX */
+.sidebar .nav{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.sidebar .nav a{
+  position:relative !important;
+  display:block;
+  width:100%;
+  min-height:22px;
+  padding:0 0 7px 28px !important;
+  margin:0;
+  color:#bdbdbd;
+  transform:none !important;
+  transition:color .25s ease !important;
+}
+
+.sidebar .nav a::before{
+  content:"✦";
+  position:absolute;
+  left:1px;
+  top:50%;
+  margin:0 !important;
+  color:var(--lavender);
+  font-size:13px;
+  line-height:1;
+  opacity:0;
+  transform:translate(-7px,-50%) scale(.55) rotate(-45deg);
+  transition:opacity .28s ease, transform .38s cubic-bezier(.2,.8,.2,1);
+  text-shadow:0 0 0 rgba(139,123,190,0);
+}
+
+.sidebar .nav a::after{
+  content:"";
+  position:absolute;
+  left:28px;
+  right:0;
+  bottom:0;
+  width:auto;
+  height:2px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--lavender),rgba(139,123,190,.15));
+  transform:scaleX(0);
+  transform-origin:left center;
+  opacity:0;
+  transition:transform .34s cubic-bezier(.2,.8,.2,1),opacity .22s ease;
+}
+
+.sidebar .nav a:hover{
+  color:#fff !important;
+}
+
+.sidebar .nav a:hover::after{
+  opacity:1;
+  transform:scaleX(1);
+}
+
+.sidebar .nav a.active{
+  color:#fff !important;
+}
+
+.sidebar .nav a.active::before{
+  opacity:1;
+  transform:translate(0,-50%) scale(1) rotate(0);
+  animation:sparkleGlow 2.2s ease-in-out .35s infinite;
+}
+
+.sidebar .nav a.active::after{
+  opacity:1;
+  transform:scaleX(1);
+}
+
+@keyframes sparkleGlow{
+  0%,100%{text-shadow:0 0 0 rgba(139,123,190,0);filter:brightness(1)}
+  50%{text-shadow:0 0 12px rgba(139,123,190,.85);filter:brightness(1.18)}
+}
+
+/* Remove the old click animation from navigation links so hover/active states stay stable. */
+.sidebar .nav a:active{
+  transform:none !important;
+}
+
+/* Mobile: keep the same underline behavior while hiding the sparkle. */
+@media(max-width:900px){
+  .sidebar .nav{
+    gap:15px;
+  }
+  .sidebar .nav a{
+    padding:0 0 7px 0 !important;
+    min-height:20px;
+  }
+  .sidebar .nav a::before{
+    display:none !important;
+  }
+  .sidebar .nav a::after{
+    left:0;
+  }
+}
+
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
+
+
+/* Refined About Me layout */
+.about-values-panel{
+  min-height:470px;
+  border-radius:28px;
+  padding:34px;
+  background:
+    radial-gradient(circle at 85% 18%,rgba(139,123,190,.22),transparent 28%),
+    radial-gradient(circle at 18% 82%,rgba(139,123,190,.12),transparent 30%),
+    #ece8e1;
+  border:1px solid rgba(28,28,28,.08);
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+.about-values-panel::before{
+  content:"";
+  position:absolute;
+  width:360px;
+  height:360px;
+  border:1px solid rgba(139,123,190,.16);
+  border-radius:50%;
+  right:-175px;
+  top:-175px;
+}
+.about-values-orbit{
+  position:absolute;
+  border:1px solid rgba(139,123,190,.12);
+  border-radius:50%;
+  pointer-events:none;
+}
+.orbit-one{width:180px;height:180px;left:-90px;bottom:-95px}
+.orbit-two{width:90px;height:90px;right:38px;bottom:35px}
+.about-values-heading{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  position:relative;
+  z-index:1;
+  color:#5e566b;
+  font-size:11px;
+  letter-spacing:2.2px;
+  text-transform:uppercase;
+}
+.about-values-line{height:1px;flex:1;background:rgba(94,86,107,.22)}
+.about-value-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+  position:relative;
+  z-index:1;
+}
+.about-value-card{
+  background:rgba(255,255,255,.62);
+  border:1px solid rgba(28,28,28,.08);
+  border-radius:18px;
+  padding:19px;
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  backdrop-filter:blur(6px);
+  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.about-value-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 28px rgba(28,28,28,.08);
+  border-color:rgba(139,123,190,.36);
+}
+.about-value-icon{
+  width:38px;
+  height:38px;
+  flex:none;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:#e7e1ef;
+  color:#7564a7;
+  font-size:18px;
+}
+.about-value-card strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:23px;
+  font-weight:500;
+  margin-bottom:5px;
+}
+.about-value-card p{
+  margin:0!important;
+  color:#706a72!important;
+  font-size:12px!important;
+  line-height:1.55!important;
+}
+.about-values-footer{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  position:relative;
+  z-index:1;
+  color:#756c79;
+  font-size:9px;
+  letter-spacing:2px;
+}
+@media(max-width:900px){
+  .about-values-panel{min-height:420px}
+}
+@media(max-width:520px){
+  .about-value-grid{grid-template-columns:1fr}
+  .about-values-panel{min-height:auto}
+  .about-values-footer{font-size:8px}
+}
+
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="sidebar">
+  <div class="logo">d<i>.</i></div>
+  <nav class="nav">
+    <a class="active" href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Work</a>
+    <a href="#process">Process</a>
+    <a href="#skills">Skills</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <div class="side-bottom">© 2026 Dharti Patel<br>Designed with curiosity & purpose.</div>
+</aside>
+
+<main>
+<section class="hero" id="home">
+ <div>
+  <div class="label">Hello, I'm</div>
+  <h1>Dharti<br>Patel</h1>
+  <div class="role">UI/UX Designer</div>
+  <p class="intro">I design intuitive and meaningful digital experiences that connect, inspire, and create impact.</p>
+  <div class="actions"><a class="btn" href="#work">View My Work ↗</a><a class="text-btn" href="#about">About Me</a></div>
+ </div>
+ <div class="hero-art">
+   <div class="portrait"><img src="images/home-dharti.png" alt="Dharti Patel professional portrait"></div>
+   <div class="quote-card">
+     I believe good design isn't just about how it looks, but how naturally it feels.
+     <div class="signature">Dharti <span>♥</span></div>
+   </div>
+ </div>
+</section>
+<section class="about" id="about">
+ <div>
+  <div class="label">About Me</div>
+  <h2>Designing with empathy, building with purpose.</h2>
+  <p>I'm Dharti, a UI/UX Designer with an M.Sc. IT background in Mobile Application & UI Development. I'm passionate about understanding how people interact with technology and transforming ideas and complex problems into simple, intuitive, and meaningful digital experiences.</p>
+  <p>For me, design is more than making something visually appealing. Every screen, interaction, and decision should have a purpose.</p>
+ </div>
+
+ <div class="about-values-panel">
+   <div class="about-values-orbit orbit-one"></div>
+   <div class="about-values-orbit orbit-two"></div>
+
+   <div class="about-values-heading">
+     <span>What guides my design</span>
+     <span class="about-values-line"></span>
+   </div>
+
+   <div class="about-value-grid">
+     <div class="about-value-card">
+       <div class="about-value-icon">✦</div>
+       <div><strong>Simplicity</strong><p>Making complex things feel easy.</p></div>
+     </div>
+     <div class="about-value-card">
+       <div class="about-value-icon">♡</div>
+       <div><strong>Empathy</strong><p>Understanding people behind every interaction.</p></div>
+     </div>
+     <div class="about-value-card">
+       <div class="about-value-icon">◎</div>
+       <div><strong>Purpose</strong><p>Designing with intention, not decoration.</p></div>
+     </div>
+     <div class="about-value-card">
+       <div class="about-value-icon">↗</div>
+       <div><strong>Growth</strong><p>Always learning and improving.</p></div>
+     </div>
+   </div>
+
+   <div class="about-values-footer">
+     <span>CURIOUS BY NATURE</span>
+     <span>THOUGHTFUL BY DESIGN</span>
+   </div>
+ </div>
+</section>
+<section id="work">
+ <div class="work-head"><div><div class="label">Featured Projects</div><h2>Selected work.</h2></div></div>
+ <p class="muted" style="max-width:760px;margin:0 0 35px;">A selection of UI/UX work from my internship experience, designed with clarity, empathy, and purpose.</p>
+ <div class="projects">
+   <article class="project">
+     <div class="project-cover"><img src="images/caresphere.png" alt="caresphere digital telemedicine application project cover"></div>
+     <div class="project-info">
+       <h3>CareSphere</h3>
+       <div class="tags">INTERNSHIP · UI/UX DESIGN · TELEMEDICINE</div>
+       <p class="muted">A digital telemedicine application that connects patients with doctors, supports appointment booking, health records, consultations, and health management.</p>
+       <div class="project-actions">
+         <a class="primary" href="https://www.figma.com/design/c0CU2YLxC1yyQhFBhP2NgR/CARESPHERE?node-id=0-1&p=f&t=XHVz2RohrmD52Ery-0" target="_blank" rel="noopener">View Figma ↗</a>
+       </div>
+     </div>
+   </article>
+   <article class="project">
+     <div class="project-cover"><img src="images/wandersync.png" alt="WanderSync travel and hospitality platform project cover"></div>
+     <div class="project-info">
+       <h3>WanderSync</h3>
+       <div class="tags">INTERNSHIP · UI/UX DESIGN · TRAVEL & HOSPITALITY</div>
+       <p class="muted">A travel and hospitality platform designed to simplify destination discovery, trip planning, bookings, itineraries, and travel details in one place.</p>
+       <div class="project-actions">
+         <a class="primary" href="https://www.figma.com/design/LkgtJwuOg7HasXfhJjMTD4/second-project-infotact?t=XHVz2RohrmD52Ery-0" target="_blank" rel="noopener">View Figma ↗</a>
+       </div>
+     </div>
+   </article>
+ </div>
+</section>
+
+
+
+
+
+
+
+<section class="philosophy">
+ <div class="label">My Design Philosophy</div>
+ <blockquote>“Good design isn't about adding more.<br>It's about understanding what truly matters.”</blockquote>
+ <p class="muted">Thoughtful decisions. Curiosity. Empathy. Purpose.</p>
+</section>
+
+<section id="process">
+ <div class="label">My Process</div><h2>From problem to possibility.</h2>
+ <div class="process-grid">
+  <div class="step"><div class="num">01</div><h3>Understand</h3><p class="muted">Understand users, problems, and goals.</p></div>
+  <div class="step"><div class="num">02</div><h3>Research</h3><p class="muted">Explore needs, behaviours, and pain points.</p></div>
+  <div class="step"><div class="num">03</div><h3>Define</h3><p class="muted">Identify the right problem to solve.</p></div>
+  <div class="step"><div class="num">04</div><h3>Explore</h3><p class="muted">Create flows, ideas, and wireframes.</p></div>
+  <div class="step"><div class="num">05</div><h3>Design</h3><p class="muted">Transform ideas into intuitive interfaces.</p></div>
+  <div class="step"><div class="num">06</div><h3>Refine</h3><p class="muted">Review, improve, and polish the experience.</p></div>
+ </div>
+</section>
+
+<section class="skills" id="skills">
+ <div class="label">Skills & Tools</div><h2>What I bring to the process.</h2>
+ <div class="skill-grid">
+  <div class="skill-box"><h3>UX Design</h3><p>User Research<br>User Personas<br>User Journeys<br>User Flows<br>Information Architecture<br>Wireframing</p></div>
+  <div class="skill-box"><h3>UI Design</h3><p>Visual Design<br>Typography<br>Responsive Design<br>Design Systems<br>Components<br>Accessibility</p></div>
+  <div class="skill-box"><h3>Tools</h3><p>Figma<br>FigJam<br></p></div>
+ </div>
+</section>
+
+<section class="personal">
+ <div><div class="label">A Little More About Me</div><h2>Beyond pixels and prototypes.</h2>
+ <p class="muted">I'm someone who appreciates thoughtful details, meaningful ideas, and creativity with purpose. I believe curiosity is one of the most important qualities a designer can have. I'm constantly learning, observing, questioning, and finding better ways to solve problems.</p></div>
+ <div class="personal-card"><p>Sometimes the smallest detail can completely change how an experience feels.</p></div>
+</section>
+
+<section class="resume" id="resume">
+  <div class="resume-copy">
+    <div class="label">My Resume</div>
+    <h2>A little more about my journey.</h2>
+    <p class="muted">Explore my education, UI/UX experience, skills, and selected work in my resume.</p>
+    <a class="btn" href="resume.pdf" download="Dharti-Patel-Resume.pdf">Download My Resume ↓</a>
+    <a class="resume-link" href="resume.pdf" target="_blank" rel="noopener">View Resume ↗</a>
+  </div>
+  <div class="resume-card">
+    <span>PDF</span>
+    <strong>Dharti Patel</strong>
+    <small>UI/UX Designer · Resume</small>
+    <div class="resume-lines"></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="label">Let's Connect</div>
+  <h2>Let's talk about my next opportunity.</h2>
+  <p>I’m currently looking for a UI/UX Designer opportunity where I can learn, contribute, and create meaningful digital experiences with a collaborative team.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="label">Get in touch</div>
+
+      <a class="contact-item" href="mailto:dhartipatel.it@gmail.com">
+        <span class="contact-icon">✉</span>
+        <span><small>EMAIL</small><strong>dhartipatel.it@gmail.com</strong></span>
+      </a>
+
+      <a class="contact-item" href="https://www.linkedin.com/in/dharti-patel-976964321" target="_blank" rel="noopener">
+        <span class="contact-icon">in</span>
+        <span><small>LINKEDIN</small><strong>linkedin.com/in/dharti-patel-976964321</strong></span>
+      </a>
+
+      <div class="availability-card">
+        <b>✦ Currently open to UI/UX opportunities.</b>
+        <span>Open to full-time roles, internships, junior UI/UX positions, and opportunities where I can grow as a designer.</span>
+      </div>
+    </div>
+
+    <form class="inquiry-form" action="https://formsubmit.co/dhartipatel.it@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="New UI/UX Job Opportunity — Dharti Patel Portfolio">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none">
+
+      <div class="form-row">
+        <label>Recruiter / Your Name <span>*</span>
+          <input name="name" type="text" placeholder="Your name" required>
+        </label>
+        <label>Email Address <span>*</span>
+          <input name="email" type="email" placeholder="you@company.com" required>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>What are you contacting me about? <span>*</span>
+          <select name="opportunity" required>
+            <option value="" selected disabled>Select an option</option>
+            <option>UI/UX Designer Job Opportunity</option>
+            <option>Junior UI/UX Role</option>
+            <option>UI/UX Internship Opportunity</option>
+            <option>Freelance / Contract Opportunity</option>
+            <option>Design Collaboration</option>
+            <option>Other</option>
+          </select>
+        </label>
+
+        <label>Work Type
+          <select name="work_type">
+            <option value="" selected disabled>Select preference</option>
+            <option>Full-time</option>
+            <option>Part-time</option>
+            <option>Internship</option>
+            <option>Freelance / Contract</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="form-row">
+        <label>Work Mode
+          <select name="work_mode">
+            <option value="" selected disabled>Select preference</option>
+            <option>Remote</option>
+            <option>Hybrid</option>
+            <option>On-site</option>
+            <option>Open to discussion</option>
+          </select>
+        </label>
+
+        <label>Company / Organization
+          <input name="company" type="text" placeholder="Company name">
+        </label>
+      </div>
+
+      <label>Tell me about the opportunity <span>*</span>
+        <textarea name="message" rows="6" placeholder="Role, team, location, responsibilities, or anything you'd like me to know..." required></textarea>
+      </label>
+
+      <button class="btn form-submit" type="submit">Send Opportunity Details ↗</button>
+      <p class="form-note">Your message will be sent to Dharti’s email.</p>
+    </form>
+  </div>
+</section>
+<footer>© 2026 Dharti Patel — UI/UX Designer</footer>
+</main>
+</div>
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+  const sections = navLinks
+    .map(link => document.querySelector(link.getAttribute('href')))
+    .filter(Boolean);
+
+  // Initial reveal state.
+  sections.forEach(section => section.classList.add('reveal'));
+  requestAnimationFrame(() => {
+    sections.slice(0, 2).forEach(section => section.classList.add('is-visible'));
+  });
+
+  const setActive = (id) => {
+    navLinks.forEach(link => {
+      const active = link.getAttribute('href') === '#' + id;
+      link.classList.toggle('active', active);
+      if (active) {
+        link.setAttribute('aria-current', 'page');
+      } else {
+        link.removeAttribute('aria-current');
+      }
+    });
+  };
+
+  // Make the purple sparkle follow whichever section is currently visible.
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        if (entry.intersectionRatio >= 0.38) setActive(entry.target.id);
+      }
+    });
+  }, { rootMargin: '-18% 0px -58% 0px', threshold: [0.15, 0.38, 0.65] });
+
+  sections.forEach(section => observer.observe(section));
+
+  // Keep navigation synchronized during fast scrolls.
+  let ticking = false;
+  window.addEventListener('scroll', () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(() => {
+      const midpoint = window.innerHeight * 0.36;
+      let current = sections[0];
+      for (const section of sections) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= midpoint && rect.bottom >= midpoint) {
+          current = section;
+          break;
+        }
+      }
+      if (current) {
+        current.classList.add('is-visible');
+        setActive(current.id);
+      }
+      ticking = false;
+    });
+  }, {passive:true});
+
+  // Navigation tap: smooth scroll and subtle click emphasis.
+  navLinks.forEach(link => {
+    link.addEventListener('click', (event) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      event.preventDefault();
+      setActive(target.id);
+      target.classList.add('is-visible');
+      target.scrollIntoView({behavior:'smooth', block:'start'});
+      // Keep the nav position stable; the CSS handles active/hover feedback.
+    });
+  });
+
+  // Ripple feedback for touch/clickable controls.
+  document.querySelectorAll('.btn, .text-btn, .resume-link, .project-actions a').forEach(el => {
+    el.style.position = el.style.position || 'relative';
+    el.style.overflow = 'hidden';
+    el.addEventListener('pointerdown', (event) => {
+      const rect = el.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height);
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.width = ripple.style.height = size + 'px';
+      ripple.style.left = (event.clientX - rect.left - size / 2) + 'px';
+      ripple.style.top = (event.clientY - rect.top - size / 2) + 'px';
+      el.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
+    });
+  });
+
+  // Cards lift gently when touched.
+  document.querySelectorAll('.project, .contact-item').forEach(card => {
+    card.addEventListener('pointerdown', () => card.style.transform = 'translateY(-3px) scale(.995)');
+    const reset = () => card.style.transform = '';
+    card.addEventListener('pointerup', reset);
+    card.addEventListener('pointercancel', reset);
+    card.addEventListener('pointerleave', reset);
+  });
+
+  // Show home as the first active section.
+  setActive('home');
+});
+</script>
+
+</body>
+</html>
