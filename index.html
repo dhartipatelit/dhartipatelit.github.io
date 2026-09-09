@@ -8,12 +8,12 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@500;600&family=Sacramento&display=swap');
 
 :root{
-  --charcoal:#1C1C1C;
-  --deep:#141414;
-  --ivory:#F7F5F2;
-  --grey:#A8A8A8;
-  --lavender:#8B7BBE;
-  --line:rgba(247,245,242,.12);
+ --charcoal:#1C1C1C;
+ --deep:#141414;
+ --ivory:#F7F5F2;
+ --grey:#A8A8A8;
+ --lavender:#8B7BBE;
+ --line:rgba(247,245,242,.12);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -26,7 +26,7 @@ a{text-decoration:none;color:inherit}
 .nav{display:flex;flex-direction:column;gap:22px}
 .nav a{color:#bdbdbd;font-size:15px;transition:.25s}
 .nav a:hover,.nav a.active{color:#fff}
-.nav a.active:before{content:"✦";color:var(--lavender);margin-right:12px}
+.nav a.active:before{content:"";color:var(--lavender);margin-right:12px}
 .side-bottom{margin-top:auto;color:#777;font-size:12px;line-height:2}
 main{grid-column:2;overflow:hidden}
 section{padding:85px 7vw}
@@ -151,7 +151,7 @@ footer{background:var(--charcoal);padding:25px 7vw;color:#777;font-size:13px}
 .nav{position:relative}
 .nav a{position:relative;transition:color .3s ease,transform .25s ease;padding-left:26px}
 .nav a.active{color:#fff}
-.nav a.active:before{content:"✦";position:absolute;left:0;top:50%;transform:translateY(-50%) scale(1);color:var(--lavender);font-size:15px;line-height:1;animation:sparkleIn .55s cubic-bezier(.2,.8,.2,1),sparklePulse 2.4s ease-in-out .55s infinite}
+.nav a.active:before{content:"";position:absolute;left:0;top:50%;transform:translateY(-50%) scale(1);color:var(--lavender);font-size:15px;line-height:1;animation:sparkleIn .55s cubic-bezier(.2,.8,.2,1),sparklePulse 2.4s ease-in-out .55s infinite}
 .nav a:hover{transform:translateX(4px);color:#fff}
 @keyframes sparkleIn{0%{opacity:0;transform:translate(-10px,-50%) scale(.3) rotate(-80deg)}70%{opacity:1;transform:translate(2px,-50%) scale(1.25) rotate(10deg)}100%{opacity:1;transform:translate(0,-50%) scale(1) rotate(0)}}
 @keyframes sparklePulse{0%,100%{text-shadow:0 0 0 rgba(139,123,190,0)}50%{text-shadow:0 0 12px rgba(139,123,190,.8)}}
@@ -167,117 +167,117 @@ a,.btn,button,select,input,textarea{ -webkit-tap-highlight-color:transparent }
 .ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.32);transform:scale(0);animation:ripple .6s ease-out;pointer-events:none}
 @keyframes ripple{to{transform:scale(4);opacity:0}}
 @media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  section.reveal{opacity:1;transform:none}
+ html{scroll-behavior:auto}
+ *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+ section.reveal{opacity:1;transform:none}
 }
 @media(max-width:900px){
-  .nav a{padding-left:0}
-  .nav a.active:before{display:none}
-  .nav a::after{left:0}
+ .nav a{padding-left:0}
+ .nav a.active:before{display:none}
+ .nav a::after{left:0}
 }
 
 
 /* FINAL NAVIGATION ANIMATION FIX */
 .sidebar .nav{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  gap:22px;
+ position:relative;
+ display:flex;
+ flex-direction:column;
+ gap:22px;
 }
 
 .sidebar .nav a{
-  position:relative !important;
-  display:block;
-  width:100%;
-  min-height:22px;
-  padding:0 0 7px 28px !important;
-  margin:0;
-  color:#bdbdbd;
-  transform:none !important;
-  transition:color .25s ease !important;
+ position:relative !important;
+ display:block;
+ width:100%;
+ min-height:22px;
+ padding:0 0 7px 28px !important;
+ margin:0;
+ color:#bdbdbd;
+ transform:none !important;
+ transition:color .25s ease !important;
 }
 
 .sidebar .nav a::before{
-  content:"✦";
-  position:absolute;
-  left:1px;
-  top:50%;
-  margin:0 !important;
-  color:var(--lavender);
-  font-size:13px;
-  line-height:1;
-  opacity:0;
-  transform:translate(-7px,-50%) scale(.55) rotate(-45deg);
-  transition:opacity .28s ease, transform .38s cubic-bezier(.2,.8,.2,1);
-  text-shadow:0 0 0 rgba(139,123,190,0);
+ content:"";
+ position:absolute;
+ left:1px;
+ top:50%;
+ margin:0 !important;
+ color:var(--lavender);
+ font-size:13px;
+ line-height:1;
+ opacity:0;
+ transform:translate(-7px,-50%) scale(.55) rotate(-45deg);
+ transition:opacity .28s ease, transform .38s cubic-bezier(.2,.8,.2,1);
+ text-shadow:0 0 0 rgba(139,123,190,0);
 }
 
 .sidebar .nav a::after{
-  content:"";
-  position:absolute;
-  left:28px;
-  right:0;
-  bottom:0;
-  width:auto;
-  height:2px;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--lavender),rgba(139,123,190,.15));
-  transform:scaleX(0);
-  transform-origin:left center;
-  opacity:0;
-  transition:transform .34s cubic-bezier(.2,.8,.2,1),opacity .22s ease;
+ content:"";
+ position:absolute;
+ left:28px;
+ right:0;
+ bottom:0;
+ width:auto;
+ height:2px;
+ border-radius:999px;
+ background:linear-gradient(90deg,var(--lavender),rgba(139,123,190,.15));
+ transform:scaleX(0);
+ transform-origin:left center;
+ opacity:0;
+ transition:transform .34s cubic-bezier(.2,.8,.2,1),opacity .22s ease;
 }
 
 .sidebar .nav a:hover{
-  color:#fff !important;
+ color:#fff !important;
 }
 
 .sidebar .nav a:hover::after{
-  opacity:1;
-  transform:scaleX(1);
+ opacity:1;
+ transform:scaleX(1);
 }
 
 .sidebar .nav a.active{
-  color:#fff !important;
+ color:#fff !important;
 }
 
 .sidebar .nav a.active::before{
-  opacity:1;
-  transform:translate(0,-50%) scale(1) rotate(0);
-  animation:sparkleGlow 2.2s ease-in-out .35s infinite;
+ opacity:1;
+ transform:translate(0,-50%) scale(1) rotate(0);
+ animation:sparkleGlow 2.2s ease-in-out .35s infinite;
 }
 
 .sidebar .nav a.active::after{
-  opacity:1;
-  transform:scaleX(1);
+ opacity:1;
+ transform:scaleX(1);
 }
 
 @keyframes sparkleGlow{
-  0%,100%{text-shadow:0 0 0 rgba(139,123,190,0);filter:brightness(1)}
-  50%{text-shadow:0 0 12px rgba(139,123,190,.85);filter:brightness(1.18)}
+ 0%,100%{text-shadow:0 0 0 rgba(139,123,190,0);filter:brightness(1)}
+ 50%{text-shadow:0 0 12px rgba(139,123,190,.85);filter:brightness(1.18)}
 }
 
 /* Remove the old click animation from navigation links so hover/active states stay stable. */
 .sidebar .nav a:active{
-  transform:none !important;
+ transform:none !important;
 }
 
 /* Mobile: keep the same underline behavior while hiding the sparkle. */
 @media(max-width:900px){
-  .sidebar .nav{
-    gap:15px;
-  }
-  .sidebar .nav a{
-    padding:0 0 7px 0 !important;
-    min-height:20px;
-  }
-  .sidebar .nav a::before{
-    display:none !important;
-  }
-  .sidebar .nav a::after{
-    left:0;
-  }
+ .sidebar .nav{
+ gap:15px;
+ }
+ .sidebar .nav a{
+ padding:0 0 7px 0 !important;
+ min-height:20px;
+ }
+ .sidebar .nav a::before{
+ display:none !important;
+ }
+ .sidebar .nav a::after{
+ left:0;
+ }
 }
 
 .portrait img{width:100%;height:100%;object-fit:cover;display:block}
@@ -285,219 +285,2500 @@ a,.btn,button,select,input,textarea{ -webkit-tap-highlight-color:transparent }
 
 /* Refined About Me layout */
 .about-values-panel{
-  min-height:470px;
-  border-radius:28px;
-  padding:34px;
-  background:
-    radial-gradient(circle at 85% 18%,rgba(139,123,190,.22),transparent 28%),
-    radial-gradient(circle at 18% 82%,rgba(139,123,190,.12),transparent 30%),
-    #ece8e1;
-  border:1px solid rgba(28,28,28,.08);
-  position:relative;
-  overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
+ min-height:470px;
+ border-radius:28px;
+ padding:34px;
+ background:
+ radial-gradient(circle at 85% 18%,rgba(139,123,190,.22),transparent 28%),
+ radial-gradient(circle at 18% 82%,rgba(139,123,190,.12),transparent 30%),
+ #ece8e1;
+ border:1px solid rgba(28,28,28,.08);
+ position:relative;
+ overflow:hidden;
+ display:flex;
+ flex-direction:column;
+ justify-content:space-between;
 }
 .about-values-panel::before{
-  content:"";
-  position:absolute;
-  width:360px;
-  height:360px;
-  border:1px solid rgba(139,123,190,.16);
-  border-radius:50%;
-  right:-175px;
-  top:-175px;
+ content:"";
+ position:absolute;
+ width:360px;
+ height:360px;
+ border:1px solid rgba(139,123,190,.16);
+ border-radius:50%;
+ right:-175px;
+ top:-175px;
 }
 .about-values-orbit{
-  position:absolute;
-  border:1px solid rgba(139,123,190,.12);
-  border-radius:50%;
-  pointer-events:none;
+ position:absolute;
+ border:1px solid rgba(139,123,190,.12);
+ border-radius:50%;
+ pointer-events:none;
 }
 .orbit-one{width:180px;height:180px;left:-90px;bottom:-95px}
 .orbit-two{width:90px;height:90px;right:38px;bottom:35px}
 .about-values-heading{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  position:relative;
-  z-index:1;
-  color:#5e566b;
-  font-size:11px;
-  letter-spacing:2.2px;
-  text-transform:uppercase;
+ display:flex;
+ align-items:center;
+ gap:16px;
+ position:relative;
+ z-index:1;
+ color:#5e566b;
+ font-size:11px;
+ letter-spacing:2.2px;
+ text-transform:uppercase;
 }
 .about-values-line{height:1px;flex:1;background:rgba(94,86,107,.22)}
 .about-value-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:15px;
-  position:relative;
-  z-index:1;
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:15px;
+ position:relative;
+ z-index:1;
 }
 .about-value-card{
-  background:rgba(255,255,255,.62);
-  border:1px solid rgba(28,28,28,.08);
-  border-radius:18px;
-  padding:19px;
-  display:flex;
-  gap:14px;
-  align-items:flex-start;
-  backdrop-filter:blur(6px);
-  transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+ background:rgba(255,255,255,.62);
+ border:1px solid rgba(28,28,28,.08);
+ border-radius:18px;
+ padding:19px;
+ display:flex;
+ gap:14px;
+ align-items:flex-start;
+ backdrop-filter:blur(6px);
+ transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
 }
 .about-value-card:hover{
-  transform:translateY(-5px);
-  box-shadow:0 14px 28px rgba(28,28,28,.08);
-  border-color:rgba(139,123,190,.36);
+ transform:translateY(-5px);
+ box-shadow:0 14px 28px rgba(28,28,28,.08);
+ border-color:rgba(139,123,190,.36);
 }
 .about-value-icon{
-  width:38px;
-  height:38px;
-  flex:none;
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  background:#e7e1ef;
-  color:#7564a7;
-  font-size:18px;
+ width:38px;
+ height:38px;
+ flex:none;
+ border-radius:50%;
+ display:grid;
+ place-items:center;
+ background:#e7e1ef;
+ color:#7564a7;
+ font-size:18px;
 }
 .about-value-card strong{
-  display:block;
-  font-family:"Playfair Display",serif;
-  font-size:23px;
-  font-weight:500;
-  margin-bottom:5px;
+ display:block;
+ font-family:"Playfair Display",serif;
+ font-size:23px;
+ font-weight:500;
+ margin-bottom:5px;
 }
 .about-value-card p{
-  margin:0!important;
-  color:#706a72!important;
-  font-size:12px!important;
-  line-height:1.55!important;
+ margin:0!important;
+ color:#706a72!important;
+ font-size:12px!important;
+ line-height:1.55!important;
 }
 .about-values-footer{
-  display:flex;
-  justify-content:space-between;
-  gap:15px;
-  position:relative;
-  z-index:1;
-  color:#756c79;
-  font-size:9px;
-  letter-spacing:2px;
+ display:flex;
+ justify-content:space-between;
+ gap:15px;
+ position:relative;
+ z-index:1;
+ color:#756c79;
+ font-size:9px;
+ letter-spacing:2px;
 }
 @media(max-width:900px){
-  .about-values-panel{min-height:420px}
+ .about-values-panel{min-height:420px}
 }
 @media(max-width:520px){
-  .about-value-grid{grid-template-columns:1fr}
-  .about-values-panel{min-height:auto}
-  .about-values-footer{font-size:8px}
+ .about-value-grid{grid-template-columns:1fr}
+ .about-values-panel{min-height:auto}
+ .about-values-footer{font-size:8px}
+}
+
+
+.about-value-icon{
+ font-family:"DM Sans",sans-serif;
+ font-weight:500;
+ letter-spacing:0;
+}
+
+
+/* Unique editorial About section */
+.about-editorial{
+ background:var(--ivory);
+ color:var(--charcoal);
+ display:grid;
+ grid-template-columns:1.02fr .98fr;
+ gap:70px;
+ align-items:stretch;
+ padding-top:100px;
+ padding-bottom:100px;
+}
+.about-editorial .label{color:#766c95;margin-bottom:18px}
+.about-editorial-copy{padding-right:25px}
+.about-kicker{
+ display:inline-block;
+ color:#72677f;
+ font-size:13px;
+ letter-spacing:.9px;
+ margin-bottom:28px;
+ padding-bottom:8px;
+ border-bottom:1px solid #c9c2cf;
+}
+.about-editorial h2{
+ font-size:clamp(46px,5.3vw,76px);
+ line-height:1.03;
+ margin:0 0 35px;
+ letter-spacing:-1.8px;
+}
+.about-editorial-copy>p{
+ max-width:610px;
+ color:#5b5860;
+ font-size:17px;
+ line-height:1.82;
+ margin:0 0 20px;
+}
+.about-signature-line{
+ display:flex;
+ align-items:center;
+ gap:15px;
+ margin-top:42px;
+ color:#635873;
+ font-size:11px;
+ letter-spacing:1.8px;
+ text-transform:uppercase;
+}
+.about-signature-line span{
+ display:block;
+ width:72px;
+ height:2px;
+ background:var(--lavender);
+}
+.about-principles{
+ background:#eeebe6;
+ border:1px solid #ddd7cf;
+ border-radius:28px;
+ padding:28px 30px 25px;
+ box-shadow:0 18px 45px rgba(28,28,28,.06);
+ position:relative;
+ overflow:hidden;
+}
+.about-principles:before{
+ content:"";
+ position:absolute;
+ width:330px;
+ height:330px;
+ border:1px solid rgba(139,123,190,.16);
+ border-radius:50%;
+ right:-160px;
+ top:-145px;
+}
+.about-principles:after{
+ content:"";
+ position:absolute;
+ width:180px;
+ height:180px;
+ border:1px solid rgba(139,123,190,.10);
+ border-radius:50%;
+ left:-105px;
+ bottom:-120px;
+}
+.principles-top{
+ display:flex;
+ justify-content:space-between;
+ color:#7b7084;
+ font-size:10px;
+ letter-spacing:2.2px;
+ text-transform:uppercase;
+ padding-bottom:20px;
+ position:relative;
+ z-index:1;
+}
+.principle-row{
+ display:grid;
+ grid-template-columns:58px 1fr 20px;
+ gap:16px;
+ align-items:start;
+ padding:25px 0;
+ border-top:1px solid #d7d1ca;
+ position:relative;
+ z-index:1;
+ transition:transform .28s ease, padding-left .28s ease;
+}
+.principle-row:hover{
+ transform:translateX(5px);
+ padding-left:6px;
+}
+.principle-number{
+ font-family:"Playfair Display",serif;
+ font-size:18px;
+ color:#88799e;
+ padding-top:3px;
+}
+.principle-main h3{
+ font-family:"Playfair Display",serif;
+ font-size:30px;
+ font-weight:500;
+ margin:0 0 5px;
+}
+.principle-main p{
+ margin:0;
+ color:#6b6870;
+ font-size:13px;
+ line-height:1.55;
+ max-width:420px;
+}
+.principle-mark{
+ color:#85769b;
+ font-size:20px;
+ line-height:1.2;
+ transition:transform .3s ease;
+}
+.principle-row:hover .principle-mark{transform:rotate(45deg)}
+.principles-footer{
+ display:flex;
+ justify-content:space-between;
+ margin-top:10px;
+ color:#817782;
+ font-size:9px;
+ letter-spacing:2px;
+ position:relative;
+ z-index:1;
+}
+@media(max-width:900px){
+ .about-editorial{grid-template-columns:1fr;gap:40px}
+ .about-editorial-copy{padding-right:0}
+}
+@media(max-width:520px){
+ .about-editorial{padding-top:75px;padding-bottom:75px}
+ .about-principles{padding:24px 20px}
+ .principle-row{grid-template-columns:42px 1fr 16px;gap:10px}
+ .principle-main h3{font-size:25px}
+ .principle-main p{font-size:12px}
+}
+
+
+/* Compact, more visual About section */
+.about-editorial{
+ min-height:auto;
+ padding-top:88px;
+ padding-bottom:88px;
+ grid-template-columns:.95fr 1.05fr;
+ gap:54px;
+ align-items:center;
+}
+.about-editorial-copy{padding-right:10px}
+.about-kicker{margin-bottom:20px}
+.about-editorial h2{margin-bottom:28px}
+.about-editorial-copy>p{font-size:16px;line-height:1.7;margin-bottom:16px}
+.about-signature-line{margin-top:30px}
+.about-principles{
+ padding:25px;
+ border-radius:26px;
+ min-height:0;
+ background:
+ radial-gradient(circle at 88% 8%,rgba(139,123,190,.22),transparent 25%),
+ linear-gradient(145deg,#f0ece7,#e9e4dc);
+}
+.principles-top{padding-bottom:17px}
+.principle-grid{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:12px;
+ position:relative;
+ z-index:1;
+}
+.principle-tile{
+ min-height:195px;
+ padding:21px 20px 19px;
+ border:1px solid rgba(28,28,28,.09);
+ border-radius:18px;
+ background:rgba(255,255,255,.62);
+ position:relative;
+ overflow:hidden;
+ transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+}
+.principle-tile::after{
+ content:"";
+ position:absolute;
+ width:95px;height:95px;
+ border-radius:50%;
+ right:-45px;bottom:-48px;
+ border:1px solid rgba(139,123,190,.18);
+}
+.principle-tile:hover{
+ transform:translateY(-4px);
+ box-shadow:0 15px 30px rgba(28,28,28,.08);
+ border-color:rgba(139,123,190,.38);
+}
+.principle-meta{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ color:#83758f;
+ font-size:11px;
+ letter-spacing:1.8px;
+}
+.principle-meta i{
+ font-style:normal;
+ font-size:18px;
+ transition:transform .25s ease;
+}
+.principle-tile:hover .principle-meta i{transform:rotate(45deg)}
+.principle-tile h3{
+ font-family:"Playfair Display",serif;
+ font-size:31px;
+ font-weight:500;
+ margin:30px 0 8px;
+}
+.principle-tile p{
+ margin:0;
+ color:#6d6870;
+ font-size:12px;
+ line-height:1.6;
+ max-width:280px;
+}
+.principles-note{
+ display:flex;
+ align-items:center;
+ gap:12px;
+ margin-top:17px;
+ position:relative;
+ z-index:1;
+ color:#796f80;
+ font-size:9px;
+ letter-spacing:1.8px;
+}
+.principles-note strong{
+ font-weight:500;
+ color:#57515c;
+ white-space:nowrap;
+}
+.note-line{
+ display:block;
+ height:1px;
+ flex:1;
+ background:rgba(121,111,128,.23);
+}
+@media(max-width:900px){
+ .about-editorial{grid-template-columns:1fr;gap:38px}
+}
+@media(max-width:600px){
+ .principle-grid{grid-template-columns:1fr}
+ .principle-tile{min-height:160px}
+ .principles-note strong{white-space:normal}
+}
+
+
+/* About section final visual tuning */
+.about-editorial .about-kicker{
+ font-size:14px;
+ letter-spacing:.35px;
+ line-height:1.5;
+ color:#655c70;
+ padding-bottom:10px;
+ margin-bottom:24px;
+}
+.about-editorial h2{
+ font-size:clamp(52px,5.8vw,84px);
+ line-height:.98;
+ letter-spacing:-2.2px;
+ max-width:760px;
+}
+.about-editorial .principles-note{
+ padding-top:12px;
+ border-top:1px solid rgba(121,111,128,.18);
+}
+.about-editorial .principles-note span:first-child{
+ font-size:9px;
+ letter-spacing:2px;
+ color:#817782;
+}
+.about-editorial .principles-note strong{
+ font-size:11px;
+ letter-spacing:1.1px;
+ color:#5b5460;
+}
+.about-editorial .note-line{
+ max-width:130px;
+ background:linear-gradient(90deg,rgba(139,123,190,.55),rgba(139,123,190,0));
+}
+@media(max-width:900px){
+ .about-editorial h2{
+ font-size:clamp(46px,9vw,70px);
+ }
+}
+
+
+/* About headline: refined scale for stronger balance on desktop and mobile */
+.about-editorial h2{
+ font-size:clamp(44px,4.6vw,66px) !important;
+ line-height:1.03 !important;
+ letter-spacing:-1.5px !important;
+}
+@media(max-width:900px){
+ .about-editorial h2{
+ font-size:clamp(40px,8vw,58px) !important;
+ line-height:1.04 !important;
+ }
+}
+@media(max-width:600px){
+ .about-editorial h2{
+ font-size:clamp(36px,9.5vw,50px) !important;
+ letter-spacing:-1px !important;
+ }
+}
+
+
+/* About body copy: slightly larger for readability */
+.about-editorial-copy > p{
+ font-size:18px !important;
+ line-height:1.8 !important;
+}
+@media(max-width:900px){
+ .about-editorial-copy > p{
+ font-size:17px !important;
+ line-height:1.75 !important;
+ }
+}
+
+
+/* Refined hero statement */
+.hero .intro{
+ max-width:600px;
+ font-size:18px;
+ line-height:1.75;
+ letter-spacing:-.1px;
+}
+@media(max-width:900px){
+ .hero .intro{font-size:17px;max-width:620px}
+}
+
+
+/* Reference-matched Process + Skills presentation */
+#process > .label,
+.skills > .label{
+ letter-spacing:3px;
+}
+#process > h2{
+ line-height:1.02;
+ max-width:900px;
+}
+.skills > h2{
+ line-height:1.08;
+ max-width:1100px;
+}
+#process .process-grid{
+ margin-top:0;
+}
+.skills .skill-grid{
+ margin-top:55px;
+}
+@media(max-width:900px){
+ #process > h2{line-height:1.04}
+}
+
+
+/* Process title: one-line presentation on desktop */
+#process > h2{
+ white-space:nowrap;
+}
+@media(max-width:900px){
+ #process > h2{white-space:normal}
+}
+
+
+/* ===== Final responsive layout pass ===== */
+html{overflow-x:hidden}
+body{width:100%;overflow-x:hidden}
+img{max-width:100%;height:auto}
+
+/* Large screens */
+@media (min-width:1200px){
+  section{padding-left:6vw;padding-right:6vw}
+  .hero{gap:60px}
+}
+
+/* Tablets / small laptops */
+@media (max-width:1100px){
+  .shell{grid-template-columns:170px 1fr}
+  .sidebar{width:170px;padding:40px 24px}
+  .hero{grid-template-columns:1fr 1fr;gap:28px}
+  .hero h1{font-size:clamp(56px,7vw,88px)}
+  .hero-art{height:500px}
+  .projects{grid-template-columns:repeat(2,1fr)}
+  .project:nth-child(3){grid-column:1/-1}
+  .about-editorial{grid-template-columns:1fr 1fr;gap:35px}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .step:nth-child(3n){border-right:1px solid var(--line)}
+  .step:nth-child(2n){border-right:none}
+  .skill-grid{grid-template-columns:repeat(2,1fr)}
+  .skill-box:nth-child(3){grid-column:1/-1}
+  .contact-grid{grid-template-columns:1fr;gap:35px}
+}
+
+/* Main mobile breakpoint */
+@media (max-width:900px){
+  .shell{display:block;min-height:auto}
+  .sidebar{
+    position:sticky;
+    top:0;
+    width:100%;
+    height:auto;
+    min-height:68px;
+    padding:12px 18px;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:16px;
+    border-right:0;
+    border-bottom:1px solid var(--line);
+    backdrop-filter:blur(14px);
+    background:rgba(23,23,23,.96);
+  }
+  .logo{font-size:38px;margin:0;flex:0 0 auto}
+  .nav{
+    margin-left:auto;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    justify-content:flex-end;
+    gap:18px;
+    width:auto;
+    overflow-x:auto;
+    scrollbar-width:none;
+    padding:2px 0 4px;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .sidebar .nav a{
+    white-space:nowrap;
+    padding:0 0 7px 0 !important;
+    font-size:12px;
+    min-height:20px;
+  }
+  .sidebar .nav a::before{display:none!important}
+  .sidebar .nav a::after{left:0;right:0}
+  .side-bottom{display:none}
+
+  main{grid-column:auto;overflow:hidden}
+  section{padding:72px 7vw}
+  .hero{
+    min-height:auto;
+    grid-template-columns:1fr;
+    gap:38px;
+    padding-top:64px;
+    padding-bottom:72px;
+  }
+  .hero h1{font-size:clamp(58px,15vw,92px)}
+  .role{font-size:26px}
+  .hero .intro{max-width:700px;font-size:17px;line-height:1.7}
+  .hero-art{
+    height:auto;
+    min-height:500px;
+    max-width:680px;
+    width:100%;
+    margin:0 auto;
+  }
+  .portrait{height:480px;width:min(78%,560px)}
+  .quote-card{
+    width:min(290px,58%);
+    right:0;
+    bottom:0;
+    padding:28px;
+    font-size:15px;
+  }
+
+  .work-head{align-items:flex-start;gap:20px}
+  .projects{grid-template-columns:1fr}
+  .project:nth-child(3){grid-column:auto}
+  .project-cover{height:auto;aspect-ratio:16/10}
+  .project-info p{font-size:14px}
+
+  .about-editorial{
+    grid-template-columns:1fr;
+    gap:44px;
+    padding-top:76px;
+    padding-bottom:76px;
+  }
+  .about-editorial-copy{padding-right:0}
+  .about-editorial h2{
+    font-size:clamp(44px,10vw,68px)!important;
+    line-height:1.03!important;
+  }
+  .about-editorial-copy>p{font-size:17px;line-height:1.75}
+  .about-principles{width:100%}
+  .principle-grid{grid-template-columns:1fr 1fr}
+
+  .philosophy{padding:100px 7vw}
+  .philosophy blockquote{font-size:clamp(38px,8vw,62px)}
+
+  #process > h2{font-size:clamp(45px,9vw,72px);white-space:normal}
+  .process-grid{grid-template-columns:1fr 1fr}
+  .step{min-height:190px;padding:28px 22px}
+  .step:nth-child(2n){border-right:none}
+
+  .skills > h2{font-size:clamp(45px,9vw,72px)}
+  .skill-grid{grid-template-columns:1fr 1fr}
+  .skill-box:nth-child(3){grid-column:auto}
+
+  .resume{grid-template-columns:1fr;gap:35px;padding:80px 7vw}
+  .resume-card{min-height:250px}
+
+  .personal{grid-template-columns:1fr;gap:35px}
+  .personal-card{min-height:280px}
+
+  .contact{padding:90px 7vw}
+  .contact h2{font-size:clamp(48px,10vw,80px)}
+  .contact-grid{grid-template-columns:1fr}
+}
+
+/* Phones */
+@media (max-width:600px){
+  .sidebar{
+    min-height:62px;
+    padding:10px 14px;
+    gap:10px;
+  }
+  .logo{font-size:34px}
+  .nav{gap:15px}
+  .sidebar .nav a{font-size:11px}
+  section{padding:60px 20px}
+
+  .hero{padding-top:52px}
+  .hero h1{font-size:clamp(52px,16vw,74px);line-height:.94}
+  .role{font-size:22px;margin:18px 0 20px}
+  .hero .intro{font-size:16px;line-height:1.65}
+  .actions{flex-wrap:wrap;gap:14px}
+  .btn{padding:15px 22px}
+
+  .hero-art{min-height:430px}
+  .portrait{height:390px;width:84%;border-radius:20px}
+  .quote-card{
+    width:64%;
+    right:0;
+    bottom:5px;
+    padding:22px;
+    border-radius:20px;
+    font-size:14px;
+    line-height:1.5;
+  }
+  .signature{font-size:32px}
+
+  h2{line-height:1.05}
+  .work-head{display:block}
+  .work-head>a{display:inline-block;margin-top:16px}
+  .project-info{padding:18px}
+  .project-info h3{font-size:19px}
+
+  .about-editorial{gap:34px}
+  .about-kicker{font-size:13px}
+  .about-editorial h2{
+    font-size:clamp(40px,11vw,58px)!important;
+    letter-spacing:-1.2px!important;
+  }
+  .about-editorial-copy>p{font-size:16px;line-height:1.7}
+  .principle-grid{grid-template-columns:1fr}
+  .principle-tile{min-height:160px}
+  .principle-main h3{font-size:28px}
+  .principles-note{flex-wrap:wrap}
+  .principles-note .note-line{display:none}
+
+  .philosophy{padding:86px 20px}
+  .philosophy blockquote{font-size:clamp(34px,9.6vw,48px)}
+
+  #process > h2,
+  .skills > h2{font-size:clamp(40px,10vw,56px)}
+  .process-grid{grid-template-columns:1fr}
+  .step,.step:nth-child(2n){border-right:none}
+  .step{min-height:auto;padding:26px 20px}
+
+  .skill-grid{grid-template-columns:1fr}
+  .skill-box:nth-child(3){grid-column:auto}
+  .skill-box h3{font-size:27px}
+
+  .resume{padding:70px 20px}
+  .resume h2{font-size:clamp(42px,10vw,58px)}
+  .resume-link{margin-left:14px}
+
+  .personal-card p{font-size:30px}
+  .contact{padding:78px 20px}
+  .contact h2{font-size:clamp(42px,11vw,60px)}
+  .contact-item strong{font-size:13px}
+  .inquiry-form{padding:20px}
+  .form-row{grid-template-columns:1fr}
+  .inquiry-form input,.inquiry-form select,.inquiry-form textarea{font-size:14px;padding:12px}
+  .form-submit{width:100%;text-align:center}
+
+  footer{padding:22px 20px}
+}
+
+/* Very small phones */
+@media (max-width:380px){
+  .nav{gap:12px}
+  .sidebar .nav a{font-size:10px}
+  section{padding-left:16px;padding-right:16px}
+  .portrait{height:340px}
+  .quote-card{width:70%;padding:18px;font-size:13px}
+}
+
+
+/* About title: smaller, calmer hierarchy */
+.about-editorial h2{
+  font-size:clamp(40px,4.1vw,58px) !important;
+  line-height:1.04 !important;
+  letter-spacing:-1.3px !important;
+}
+@media(max-width:900px){
+  .about-editorial h2{
+    font-size:clamp(38px,7.5vw,54px) !important;
+  }
+}
+@media(max-width:600px){
+  .about-editorial h2{
+    font-size:clamp(34px,8.7vw,48px) !important;
+    letter-spacing:-.8px !important;
+  }
+}
+
+
+/* Final responsive safety */
+html,body{max-width:100%;overflow-x:hidden}
+@media(max-width:900px){
+  .hero-art,.about-principles,.about-editorial-copy,.inquiry-form,.resume-card{max-width:100%;min-width:0}
+  .projects,.process-grid,.skill-grid,.principle-grid,.form-row{width:100%}
+  h1,h2,h3,p,a,strong,span{overflow-wrap:anywhere}
+}
+
+
+/* Navigation sparkle indicator */
+.sidebar .nav a::before{
+  content:"✦";
+  position:absolute;
+  left:0;
+  top:50%;
+  width:18px;
+  height:18px;
+  margin:0;
+  display:grid;
+  place-items:center;
+  color:var(--lavender);
+  font-size:13px;
+  line-height:1;
+  opacity:0;
+  transform:translate(-9px,-50%) scale(.3) rotate(-35deg);
+  text-shadow:0 0 0 rgba(139,123,190,0);
+  transition:opacity .25s ease, transform .42s cubic-bezier(.2,.8,.2,1), text-shadow .35s ease;
+  pointer-events:none;
+}
+.sidebar .nav a.active::before{
+  opacity:1;
+  transform:translate(0,-50%) scale(1) rotate(0);
+  animation:navSparklePulse 2.1s ease-in-out .2s infinite;
+}
+@keyframes navSparklePulse{
+  0%,100%{filter:brightness(1);text-shadow:0 0 0 rgba(139,123,190,0)}
+  45%{filter:brightness(1.18);text-shadow:0 0 10px rgba(139,123,190,.75)}
+  55%{filter:brightness(1.05);text-shadow:0 0 4px rgba(139,123,190,.35)}
+}
+@media(max-width:900px){
+  .sidebar .nav a::before{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .sidebar .nav a.active::before{animation:none}
+}
+
+
+/* ===== Robust responsive pass for every section and project cover ===== */
+*,*::before,*::after{box-sizing:border-box}
+html{width:100%;max-width:100%;overflow-x:hidden}
+body{width:100%;max-width:100%;min-width:0;overflow-x:hidden}
+main{min-width:0}
+section{width:100%;max-width:100%}
+img,svg,video,canvas{display:block;max-width:100%}
+
+/* Project cover images: always fill their responsive frame without overflow */
+.project-cover{
+  width:100%;
+  height:auto;
+  aspect-ratio:16 / 10;
+  overflow:hidden;
+}
+.project-cover img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:cover;
+  object-position:center;
+}
+
+/* Hero imagery */
+.hero-art{width:100%;max-width:100%;min-width:0}
+.portrait{max-width:100%}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center}
+
+/* Keep text from creating horizontal overflow */
+h1,h2,h3,p,a,strong,span,div{max-width:100%}
+p,a,strong,span{overflow-wrap:anywhere}
+
+/* Desktop / tablet */
+@media (max-width:1100px){
+  section{padding-left:5vw;padding-right:5vw}
+  .project-info{min-width:0}
+}
+
+@media (max-width:900px){
+  .shell{display:block}
+  .sidebar{
+    position:sticky;
+    top:0;
+    z-index:100;
+    width:100%;
+    min-height:64px;
+    height:auto;
+    padding:10px 16px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+  }
+  main{width:100%;margin:0}
+  section{padding-left:6vw;padding-right:6vw}
+
+  .nav{
+    flex:1 1 auto;
+    min-width:0;
+    margin-left:auto;
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+    justify-content:flex-end;
+    scrollbar-width:none;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .sidebar .nav a{
+    flex:0 0 auto;
+    white-space:nowrap;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    width:100%;
+  }
+  .hero > div:first-child{min-width:0}
+  .hero-art{
+    min-height:auto;
+    width:min(100%,720px);
+    margin-inline:auto;
+  }
+  .portrait{
+    width:min(82%,560px);
+    margin-inline:auto;
+    height:auto;
+    aspect-ratio:3/4;
+  }
+  .quote-card{
+    max-width:62%;
+  }
+
+  .projects{
+    grid-template-columns:1fr;
+  }
+  .project{
+    width:100%;
+    min-width:0;
+  }
+  .project:nth-child(3){grid-column:auto}
+
+  .about-editorial{
+    grid-template-columns:1fr;
+    width:100%;
+  }
+  .about-editorial-copy,
+  .about-principles{width:100%;min-width:0}
+
+  .process-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .step{
+    min-width:0;
+  }
+
+  .skill-grid{
+    grid-template-columns:1fr 1fr;
+  }
+  .skill-box{min-width:0}
+
+  .resume{
+    grid-template-columns:1fr;
+  }
+  .resume-card{width:100%}
+
+  .personal{
+    grid-template-columns:1fr;
+  }
+
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+  .inquiry-form{
+    width:100%;
+    min-width:0;
+  }
+}
+
+@media (max-width:600px){
+  section{padding-left:20px;padding-right:20px}
+
+  .sidebar{
+    padding:9px 12px;
+    gap:10px;
+  }
+  .logo{font-size:34px}
+  .nav{
+    gap:14px;
+    justify-content:flex-start;
+  }
+  .sidebar .nav a{
+    font-size:11px;
+  }
+
+  .hero{gap:30px}
+  .hero h1{
+    font-size:clamp(50px,16vw,74px);
+    line-height:.95;
+  }
+  .hero .intro{
+    font-size:16px;
+    line-height:1.65;
+  }
+  .role{font-size:22px}
+
+  .hero-art{
+    width:100%;
+    min-height:0;
+  }
+  .portrait{
+    width:82%;
+    aspect-ratio:4/5;
+    border-radius:20px;
+  }
+  .quote-card{
+    width:65%;
+    max-width:290px;
+    right:0;
+    bottom:0;
+    padding:20px;
+    font-size:14px;
+    border-radius:20px;
+  }
+
+  .projects{
+    gap:18px;
+  }
+  .project-cover{
+    aspect-ratio:16 / 10;
+    min-height:0;
+  }
+
+  .principle-grid{
+    grid-template-columns:1fr !important;
+  }
+  .principle-tile{
+    min-height:150px;
+  }
+
+  .process-grid,
+  .skill-grid{
+    grid-template-columns:1fr;
+  }
+  .step{
+    border-right:none!important;
+  }
+
+  .contact{padding-left:20px;padding-right:20px}
+  .inquiry-form{padding:20px}
+  .form-row{grid-template-columns:1fr}
+
+  .resume-link{margin-left:12px}
+}
+
+@media (max-width:380px){
+  section{padding-left:16px;padding-right:16px}
+  .sidebar{padding-left:9px;padding-right:9px}
+  .nav{gap:11px}
+  .sidebar .nav a{font-size:10px}
+  .portrait{width:86%}
+  .quote-card{width:70%;font-size:13px;padding:17px}
+}
+
+/* Prevent accidental horizontal scrolling from decorative elements */
+@media (max-width:900px){
+  .about-principles:before,
+  .about-principles:after,
+  .about-values-panel:before,
+  .about-values-panel:after,
+  .principle-tile:after{
+    max-width:100vw;
+  }
+}
+
+
+.contact-icon svg{
+  width:17px;
+  height:17px;
+  display:block;
+}
+
+
+/* Guaranteed visible email icon */
+.contact-icon.email-icon{
+  display:grid!important;
+  place-items:center!important;
+  color:#7564A7!important;
+}
+.contact-icon.email-icon svg{
+  display:block!important;
+  width:18px!important;
+  height:18px!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+
+
+/* ===== Compact mobile menu/header ===== */
+@media(max-width:900px){
+  body{overflow-x:hidden}
+  .sidebar{
+    position:sticky!important;
+    top:0!important;
+    z-index:2000!important;
+    width:100%!important;
+    min-height:68px!important;
+    height:68px!important;
+    padding:0 16px!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:space-between!important;
+    background:rgba(20,20,20,.98)!important;
+    border-bottom:1px solid rgba(255,255,255,.10)!important;
+    backdrop-filter:blur(14px);
+  }
+
+  .sidebar .logo{
+    flex:0 0 auto!important;
+    font-size:38px!important;
+    margin:0!important;
+    line-height:1!important;
+  }
+
+  .mobile-menu-toggle{
+    display:grid!important;
+    place-items:center;
+    width:42px;
+    height:42px;
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:12px;
+    background:rgba(255,255,255,.04);
+    color:#eee;
+    cursor:pointer;
+    position:relative;
+    flex:0 0 auto;
+  }
+  .mobile-menu-toggle span,
+  .mobile-menu-toggle span::before,
+  .mobile-menu-toggle span::after{
+    display:block;
+    width:18px;
+    height:1.5px;
+    background:#eee;
+    border-radius:2px;
+    content:"";
+    position:absolute;
+    transition:transform .28s ease,opacity .2s ease;
+  }
+  .mobile-menu-toggle span::before{transform:translateY(-6px)}
+  .mobile-menu-toggle span::after{transform:translateY(6px)}
+  .mobile-menu-toggle.is-open span{background:transparent}
+  .mobile-menu-toggle.is-open span::before{transform:rotate(45deg)}
+  .mobile-menu-toggle.is-open span::after{transform:rotate(-45deg)}
+
+  .sidebar .nav{
+    display:none!important;
+    position:absolute;
+    left:12px;
+    right:12px;
+    top:76px;
+    margin:0!important;
+    padding:10px!important;
+    background:rgba(24,24,24,.98);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+    box-shadow:0 22px 50px rgba(0,0,0,.35);
+    flex-direction:column!important;
+    align-items:stretch!important;
+    gap:2px!important;
+    overflow:visible!important;
+  }
+  .sidebar .nav.is-open{
+    display:flex!important;
+  }
+  .sidebar .nav a{
+    width:100%!important;
+    padding:13px 14px 13px 30px!important;
+    min-height:43px;
+    border-radius:10px;
+    font-size:13px!important;
+    color:#bdb9c0;
+    display:flex!important;
+    align-items:center;
+  }
+  .sidebar .nav a:hover{
+    background:rgba(255,255,255,.05);
+  }
+  .sidebar .nav a.active{
+    background:rgba(139,123,190,.10);
+    color:#fff!important;
+  }
+  .sidebar .nav a::before{
+    left:10px!important;
+    width:12px!important;
+    height:12px!important;
+    font-size:9px!important;
+  }
+  .sidebar .nav a::after{
+    left:30px!important;
+    right:12px!important;
+    bottom:6px!important;
+    height:1px!important;
+  }
+
+  .mobile-menu-scrim{
+    display:none;
+    position:fixed;
+    inset:68px 0 0;
+    z-index:1500;
+    background:rgba(0,0,0,.28);
+  }
+  .mobile-menu-scrim.is-open{display:block}
+
+  main{
+    width:100%!important;
+    margin:0!important;
+    padding:0!important;
+  }
+
+  main > section:first-child{
+    margin-top:0!important;
+    padding-top:50px!important;
+  }
+
+  .hero{
+    min-height:calc(100svh - 68px)!important;
+    padding-top:46px!important;
+    padding-bottom:54px!important;
+  }
+}
+
+@media(min-width:901px){
+  .mobile-menu-toggle,.mobile-menu-scrim{display:none!important}
+}
+
+
+/* ===== Animated mobile menu icon ===== */
+@media(max-width:900px){
+  .mobile-menu-toggle{
+    width:46px!important;
+    height:46px!important;
+    border:1px solid rgba(255,255,255,.16)!important;
+    border-radius:14px!important;
+    background:linear-gradient(145deg,rgba(139,123,190,.12),rgba(255,255,255,.03))!important;
+    box-shadow:0 8px 24px rgba(0,0,0,.18),inset 0 0 0 1px rgba(255,255,255,.02);
+    position:relative!important;
+    overflow:visible!important;
+    transition:transform .28s ease,border-color .28s ease,background .28s ease,box-shadow .28s ease;
+  }
+  .mobile-menu-toggle::before{
+    content:"";
+    position:absolute;
+    inset:-5px;
+    border:1px solid rgba(139,123,190,0);
+    border-radius:18px;
+    transition:border-color .3s ease,transform .35s ease,opacity .3s ease;
+    pointer-events:none;
+  }
+  .mobile-menu-toggle:hover{
+    transform:translateY(-1px);
+    border-color:rgba(139,123,190,.5)!important;
+    box-shadow:0 10px 28px rgba(0,0,0,.25),0 0 18px rgba(139,123,190,.08);
+  }
+  .menu-lines{
+    position:relative;
+    width:20px;
+    height:18px;
+    display:block;
+  }
+  .menu-lines i{
+    position:absolute;
+    left:1px;
+    width:18px;
+    height:1.7px;
+    border-radius:4px;
+    background:#f2eef3;
+    transform-origin:center;
+    transition:transform .38s cubic-bezier(.2,.8,.2,1),opacity .2s ease,width .3s ease,background .3s ease;
+  }
+  .menu-lines i:nth-child(1){top:1px;width:18px}
+  .menu-lines i:nth-child(2){top:8px;width:13px;left:1px}
+  .menu-lines i:nth-child(3){top:15px;width:18px}
+
+  .mobile-menu-toggle.is-open{
+    background:linear-gradient(145deg,rgba(139,123,190,.18),rgba(255,255,255,.04))!important;
+    border-color:rgba(139,123,190,.52)!important;
+  }
+  .mobile-menu-toggle.is-open::before{
+    border-color:rgba(139,123,190,.24);
+    transform:scale(1.02);
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(1){
+    transform:translateY(7px) rotate(45deg);
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(2){
+    opacity:0;
+    transform:scaleX(.2);
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg);
+  }
+    50%{text-shadow:0 0 10px rgba(139,123,190,.9);filter:brightness(1.25)}
+  }
+
+  .mobile-menu-toggle:active{
+    transform:scale(.96)!important;
+  }
+
+  /* Make the dropdown feel connected to the animated icon. */
+  .sidebar .nav{
+    transform:translateY(-8px) scale(.985);
+    transform-origin:top right;
+    opacity:0;
+    pointer-events:none;
+    transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .22s ease;
+  }
+  .sidebar .nav.is-open{
+    transform:translateY(0) scale(1);
+    opacity:1;
+    pointer-events:auto;
+  }
+  .sidebar .nav a{
+    transition:background .2s ease,color .2s ease,transform .2s ease;
+  }
+  .sidebar .nav a:hover{
+    transform:translateX(3px);
+  }
+  .sidebar .nav a.active::before{
+    animation:navSparklePulse 2.1s ease-in-out .2s infinite;
+  }
+}
+
+
+/* Active-section sparkle: belongs to the navigation item, not the menu icon */
+@media(max-width:900px){
+  .sidebar .nav a::before{
+    display:grid!important;
+    content:"✦";
+    position:absolute;
+    left:8px!important;
+    top:50%!important;
+    width:12px!important;
+    height:12px!important;
+    color:var(--lavender);
+    font-size:9px!important;
+    line-height:1;
+    opacity:0;
+    transform:translate(-5px,-50%) scale(.35) rotate(-45deg);
+    transition:opacity .25s ease,transform .42s cubic-bezier(.2,.8,.2,1);
+    pointer-events:none;
+  }
+  .sidebar .nav a.active::before{
+    opacity:1;
+    transform:translate(0,-50%) scale(1) rotate(0);
+    animation:navSparklePulse 2.1s ease-in-out .15s infinite;
+  }
+  .sidebar .nav a{
+    padding-left:30px!important;
+  }
+}
+@media(max-width:600px){
+  .sidebar .nav a{
+    padding-left:28px!important;
+  }
+  .sidebar .nav a::before{
+    left:8px!important;
+    font-size:9px!important;
+  }
+}
+
+/* Desktop nav stays visually unchanged; the same active-section sparkle remains there. */
+
+
+/* Final navigation visibility fix */
+@media(min-width:901px){
+  .sidebar .nav{
+    display:flex!important;
+    position:relative!important;
+    left:auto!important;
+    right:auto!important;
+    top:auto!important;
+    margin-top:0!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:none!important;
+    flex-direction:column!important;
+    align-items:stretch!important;
+    overflow:visible!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    padding:0!important;
+  }
+  .sidebar .nav a{
+    display:block!important;
+    opacity:1!important;
+    visibility:visible!important;
+  }
+}
+@media(max-width:900px){
+  .sidebar .nav:not(.is-open){
+    display:none!important;
+  }
+  .sidebar .nav.is-open{
+    display:flex!important;
+  }
+}
+
+
+/* ===== Active navigation section sparkle — final ===== */
+.sidebar .nav a{
+  position:relative!important;
+}
+.sidebar .nav a::before{
+  content:"✦"!important;
+  position:absolute!important;
+  display:grid!important;
+  place-items:center!important;
+  color:var(--lavender)!important;
+  background:transparent!important;
+  border:0!important;
+  width:14px!important;
+  height:14px!important;
+  font-size:10px!important;
+  line-height:1!important;
+  opacity:0!important;
+  transform:translate(-7px,-50%) scale(.35) rotate(-45deg)!important;
+  transition:opacity .22s ease,transform .42s cubic-bezier(.2,.8,.2,1)!important;
+  pointer-events:none!important;
+  margin:0!important;
+  left:0!important;
+  top:50%!important;
+  text-shadow:0 0 0 rgba(139,123,190,0);
+}
+.sidebar .nav a.active::before{
+  opacity:1!important;
+  transform:translate(0,-50%) scale(1) rotate(0)!important;
+  animation:sectionSparkleGlow 2.2s ease-in-out .15s infinite!important;
+}
+@keyframes sectionSparkleGlow{
+  0%,100%{filter:brightness(1);text-shadow:0 0 0 rgba(139,123,190,0)}
+  48%{filter:brightness(1.22);text-shadow:0 0 11px rgba(139,123,190,.85)}
+  58%{filter:brightness(1.06);text-shadow:0 0 4px rgba(139,123,190,.4)}
+}
+
+/* Desktop: make room for the sparkle without shifting inactive links. */
+@media(min-width:901px){
+  .sidebar .nav a{
+    padding-left:28px!important;
+  }
+  .sidebar .nav a::before{
+    left:2px!important;
+  }
+}
+
+/* Mobile opened menu: sparkle is visible directly beside the active section. */
+@media(max-width:900px){
+  .sidebar .nav a{
+    padding-left:30px!important;
+  }
+  .sidebar .nav a::before{
+    left:9px!important;
+    width:12px!important;
+    height:12px!important;
+    font-size:9px!important;
+  }
+  .sidebar .nav a.active{
+    background:rgba(139,123,190,.11)!important;
+    color:#fff!important;
+  }
+}
+
+/* Compact phones */
+@media(max-width:600px){
+  .sidebar .nav a{
+    padding-left:28px!important;
+  }
+  .sidebar .nav a::before{
+    left:8px!important;
+  }
+}
+
+/* Never show a sparkle on the hamburger button itself. */
+.mobile-menu-toggle::before{
+  content:""!important;
+}
+
+
+/* Resume section — reference-inspired composition */
+.resume-reference{
+  background:#202020!important;
+  display:grid!important;
+  grid-template-columns:minmax(0,1.05fr) minmax(420px,.95fr)!important;
+  gap:72px!important;
+  align-items:center!important;
+  padding-top:82px!important;
+  padding-bottom:82px!important;
+}
+.resume-reference .resume-copy{
+  max-width:690px;
+}
+.resume-reference .resume-copy .label{
+  margin-bottom:24px;
+}
+.resume-reference .resume-copy h2{
+  margin:0 0 20px!important;
+  max-width:700px;
+  font-size:clamp(56px,5.2vw,78px)!important;
+  line-height:1.02!important;
+  letter-spacing:-1.8px!important;
+  color:#f1eeea;
+}
+.resume-reference .resume-copy p{
+  max-width:680px;
+  margin:0;
+  font-size:16px;
+  line-height:1.65;
+  color:#a9a4aa;
+}
+.resume-reference .resume-card{
+  min-height:360px;
+  padding:31px 32px!important;
+  background:
+    radial-gradient(circle at 90% 4%,rgba(139,123,190,.20),transparent 26%),
+    #181818!important;
+  border:1px solid rgba(255,255,255,.12)!important;
+  border-radius:22px!important;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  box-shadow:0 20px 50px rgba(0,0,0,.15);
+}
+.resume-reference .resume-card-top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  margin-bottom:44px;
+}
+.resume-reference .resume-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:48px;
+  height:31px;
+  border-radius:6px;
+  background:#efebf5;
+  color:#6c5d9a;
+  font-size:10px;
+  letter-spacing:2px;
+  font-weight:600;
+}
+.resume-reference .resume-status{
+  font-size:9px;
+  letter-spacing:2.1px;
+  color:#93889f;
+}
+.resume-reference .resume-card>strong{
+  font-family:"Playfair Display",serif;
+  font-size:42px;
+  line-height:1.05;
+  font-weight:500;
+  color:#f2efeb;
+}
+.resume-reference .resume-card>small{
+  margin-top:9px;
+  font-size:12px;
+  color:#a19ba2;
+}
+.resume-reference .resume-card-divider{
+  width:100%;
+  height:1px;
+  background:rgba(255,255,255,.13);
+  margin:30px 0 22px;
+}
+.resume-reference .resume-actions{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:11px;
+}
+.resume-reference .resume-action-primary,
+.resume-reference .resume-action-secondary{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  min-height:50px;
+  padding:14px 16px;
+  border-radius:10px;
+  font-size:12px;
+  transition:transform .22s ease,background .22s ease,border-color .22s ease;
+}
+.resume-reference .resume-action-primary{
+  background:#8a78bf;
+  color:#fff;
+}
+.resume-reference .resume-action-secondary{
+  border:1px solid rgba(255,255,255,.15);
+  color:#eeeaf0;
+  background:transparent;
+}
+.resume-reference .resume-action-primary:hover,
+.resume-reference .resume-action-secondary:hover{
+  transform:translateY(-2px);
+}
+@media(max-width:900px){
+  .resume-reference{
+    grid-template-columns:1fr!important;
+    gap:38px!important;
+    padding-top:72px!important;
+    padding-bottom:72px!important;
+  }
+  .resume-reference .resume-copy h2{
+    font-size:clamp(46px,9vw,68px)!important;
+  }
+}
+@media(max-width:520px){
+  .resume-reference .resume-card{
+    min-height:310px;
+    padding:24px!important;
+  }
+  .resume-reference .resume-card>strong{
+    font-size:34px;
+  }
+  .resume-reference .resume-actions{
+    grid-template-columns:1fr;
+  }
+}
+
+
+/* ===== Persistent mobile header ===== */
+@media(max-width:900px){
+  .sidebar{
+    position:fixed!important;
+    top:0!important;
+    left:0!important;
+    right:0!important;
+    z-index:3000!important;
+    width:100%!important;
+    height:68px!important;
+    min-height:68px!important;
+    margin:0!important;
+  }
+
+  /* Reserve the header's height so the first section doesn't hide underneath it. */
+  main{
+    padding-top:68px!important;
+  }
+
+  /* Keep every section naturally scrollable beneath the fixed header. */
+  section{
+    scroll-margin-top:78px!important;
+  }
+
+  /* Menu panel opens below the fixed header and stays aligned to it. */
+  .sidebar .nav{
+    position:absolute!important;
+    top:76px!important;
+    left:12px!important;
+    right:12px!important;
+  }
+
+  .mobile-menu-scrim{
+    position:fixed!important;
+    top:68px!important;
+    left:0!important;
+    right:0!important;
+    bottom:0!important;
+    z-index:2500!important;
+  }
+}
+
+@media(max-width:600px){
+  .sidebar{height:64px!important;min-height:64px!important}
+  main{padding-top:64px!important}
+  section{scroll-margin-top:74px!important}
+  .sidebar .nav{top:72px!important}
+  .mobile-menu-scrim{top:64px!important}
+}
+
+
+/* ===== Polished mobile menu button ===== */
+@media(max-width:900px){
+  .mobile-menu-toggle{
+    width:46px!important;
+    height:46px!important;
+    display:grid!important;
+    place-items:center!important;
+    padding:0!important;
+    border:1px solid rgba(255,255,255,.14)!important;
+    border-radius:13px!important;
+    background:rgba(255,255,255,.035)!important;
+    box-shadow:0 8px 24px rgba(0,0,0,.20),inset 0 1px 0 rgba(255,255,255,.035)!important;
+    color:#f4f0f5!important;
+    position:relative!important;
+    overflow:hidden!important;
+    transform:none!important;
+    transition:background .25s ease,border-color .25s ease,box-shadow .25s ease,transform .18s ease!important;
+  }
+
+  .mobile-menu-toggle:hover{
+    background:rgba(139,123,190,.10)!important;
+    border-color:rgba(139,123,190,.40)!important;
+    box-shadow:0 10px 28px rgba(0,0,0,.24),0 0 16px rgba(139,123,190,.07)!important;
+  }
+
+  .mobile-menu-toggle:active{
+    transform:scale(.96)!important;
+  }
+
+  .mobile-menu-toggle::before,
+  .mobile-menu-toggle::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  .menu-lines{
+    width:20px!important;
+    height:18px!important;
+    position:relative!important;
+    display:block!important;
+  }
+
+  .menu-lines i{
+    position:absolute!important;
+    left:1px!important;
+    top:auto!important;
+    width:18px!important;
+    height:1.6px!important;
+    border-radius:99px!important;
+    background:#f2eef3!important;
+    display:block!important;
+    margin:0!important;
+    opacity:1!important;
+    transform:none!important;
+    transform-origin:center!important;
+    box-shadow:none!important;
+    transition:
+      transform .34s cubic-bezier(.2,.8,.2,1),
+      opacity .20s ease,
+      width .28s ease,
+      background .25s ease!important;
+  }
+
+  .menu-lines i:nth-child(1){top:1px!important;width:18px!important}
+  .menu-lines i:nth-child(2){top:8px!important;width:13px!important}
+  .menu-lines i:nth-child(3){top:15px!important;width:18px!important}
+
+  .mobile-menu-toggle.is-open{
+    background:rgba(139,123,190,.12)!important;
+    border-color:rgba(139,123,190,.48)!important;
+    box-shadow:0 10px 28px rgba(0,0,0,.25),0 0 18px rgba(139,123,190,.10)!important;
+  }
+
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(1){
+    transform:translateY(7px) rotate(45deg)!important;
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(2){
+    opacity:0!important;
+    transform:scaleX(.2)!important;
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg)!important;
+  }
+
+  /* Menu panel animation stays soft and connected to the button. */
+  .sidebar .nav{
+    transform-origin:top right!important;
+    transform:translateY(-7px) scale(.985)!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    transition:transform .28s cubic-bezier(.2,.8,.2,1),opacity .20s ease!important;
+  }
+  .sidebar .nav.is-open{
+    transform:translateY(0) scale(1)!important;
+    opacity:1!important;
+    pointer-events:auto!important;
+  }
+}
+
+
+/* ===== Clean hamburger icon: no duplicate pseudo-lines ===== */
+@media(max-width:900px){
+  .mobile-menu-toggle{
+    width:46px!important;
+    height:46px!important;
+    padding:0!important;
+    display:grid!important;
+    place-items:center!important;
+    position:relative!important;
+    overflow:hidden!important;
+    border:1px solid rgba(255,255,255,.14)!important;
+    border-radius:13px!important;
+    background:rgba(255,255,255,.035)!important;
+    color:#f2eef3!important;
+  }
+
+  .mobile-menu-toggle::before,
+  .mobile-menu-toggle::after,
+  .mobile-menu-toggle span::before,
+  .mobile-menu-toggle span::after,
+  .mobile-menu-toggle .menu-lines::before,
+  .mobile-menu-toggle .menu-lines::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  .mobile-menu-toggle .menu-lines{
+    position:relative!important;
+    display:block!important;
+    width:20px!important;
+    height:18px!important;
+    margin:0!important;
+  }
+
+  .mobile-menu-toggle .menu-lines i{
+    position:absolute!important;
+    display:block!important;
+    left:1px!important;
+    width:18px!important;
+    height:1.6px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:999px!important;
+    background:#f2eef3!important;
+    opacity:1!important;
+    transform-origin:center!important;
+    transition:transform .32s cubic-bezier(.2,.8,.2,1),opacity .18s ease!important;
+  }
+
+  .mobile-menu-toggle .menu-lines i:nth-child(1){top:1px!important}
+  .mobile-menu-toggle .menu-lines i:nth-child(2){top:8px!important;width:13px!important}
+  .mobile-menu-toggle .menu-lines i:nth-child(3){top:15px!important}
+
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(1){
+    transform:translateY(7px) rotate(45deg)!important;
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(2){
+    opacity:0!important;
+    transform:scaleX(.15)!important;
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg)!important;
+  }
+
+  .mobile-menu-toggle:hover{
+    border-color:rgba(139,123,190,.42)!important;
+    background:rgba(139,123,190,.08)!important;
+  }
+  .mobile-menu-toggle:active{
+    transform:scale(.96)!important;
+  }
+}
+
+
+/* Supplied project covers */
+.project-cover{
+  width:100%;
+  aspect-ratio:16/10;
+  overflow:hidden;
+}
+.project-cover img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+
+
+/* ===== Process section mobile spacing ===== */
+@media(max-width:600px){
+  #process{
+    padding-top:54px!important;
+    padding-bottom:54px!important;
+  }
+  #process > h2{
+    margin-bottom:26px!important;
+  }
+  #process .process-grid{
+    margin-top:0!important;
+    row-gap:0!important;
+  }
+  #process .step{
+    padding:22px 0!important;
+    min-height:0!important;
+  }
+  #process .step .num{
+    margin-bottom:18px!important;
+  }
+  #process .step h3{
+    margin:0 0 12px!important;
+    font-size:27px!important;
+    line-height:1.15!important;
+  }
+  #process .step p{
+    margin:0!important;
+    font-size:15px!important;
+    line-height:1.6!important;
+  }
+}
+@media(max-width:380px){
+  #process{
+    padding-top:48px!important;
+    padding-bottom:48px!important;
+  }
+  #process .step{
+    padding:19px 0!important;
+  }
+}
+
+
+/* ===== Mobile Work → Philosophy spacing ===== */
+@media(max-width:600px){
+  #work{
+    padding-bottom:30px!important;
+  }
+  #work .projects{
+    margin-bottom:0!important;
+  }
+  #work .project:last-child{
+    margin-bottom:0!important;
+  }
+
+  .philosophy{
+    padding-top:38px!important;
+    padding-bottom:70px!important;
+  }
+  .philosophy .label{
+    margin-bottom:20px!important;
+  }
+}
+@media(max-width:380px){
+  #work{
+    padding-bottom:24px!important;
+  }
+  .philosophy{
+    padding-top:30px!important;
+    padding-bottom:58px!important;
+  }
+}
+
+
+/* ===== Clean 3-line hamburger icon ===== */
+@media(max-width:900px){
+  .mobile-menu-toggle{
+    width:46px!important;
+    height:46px!important;
+    display:grid!important;
+    place-items:center!important;
+    padding:0!important;
+    border:1px solid rgba(255,255,255,.14)!important;
+    border-radius:13px!important;
+    background:rgba(255,255,255,.035)!important;
+    box-shadow:0 8px 22px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.03)!important;
+    position:relative!important;
+    overflow:hidden!important;
+    transform:none!important;
+  }
+
+  /* Disable inherited decorative pseudo-elements so only 3 bars are visible. */
+  .mobile-menu-toggle::before,
+  .mobile-menu-toggle::after,
+  .mobile-menu-toggle .menu-lines::before,
+  .mobile-menu-toggle .menu-lines::after,
+  .mobile-menu-toggle span::before,
+  .mobile-menu-toggle span::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  .mobile-menu-toggle .menu-lines{
+    position:relative!important;
+    display:block!important;
+    width:21px!important;
+    height:18px!important;
+  }
+
+  .mobile-menu-toggle .menu-lines i{
+    position:absolute!important;
+    left:1px!important;
+    display:block!important;
+    width:19px!important;
+    height:1.7px!important;
+    padding:0!important;
+    margin:0!important;
+    border:0!important;
+    border-radius:999px!important;
+    background:#f3eff4!important;
+    opacity:1!important;
+    box-shadow:none!important;
+    transform-origin:center!important;
+    transition:transform .28s ease,opacity .2s ease,width .22s ease!important;
+  }
+
+  .mobile-menu-toggle .menu-lines i:nth-child(1){top:1px!important}
+  .mobile-menu-toggle .menu-lines i:nth-child(2){top:8px!important;width:14px!important}
+  .mobile-menu-toggle .menu-lines i:nth-child(3){top:15px!important}
+
+  .mobile-menu-toggle:hover{
+    background:rgba(139,123,190,.08)!important;
+    border-color:rgba(139,123,190,.38)!important;
+  }
+
+  .mobile-menu-toggle:active{
+    transform:scale(.96)!important;
+  }
+
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(1){
+    transform:translateY(7px) rotate(45deg)!important;
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(2){
+    opacity:0!important;
+    transform:scaleX(.2)!important;
+  }
+  .mobile-menu-toggle.is-open .menu-lines i:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg)!important;
+  }
+}
+
+
+/* ===== Minimal hamburger: no square/button box ===== */
+@media(max-width:900px){
+  .sidebar .mobile-menu-toggle{
+    appearance:none!important;
+    -webkit-appearance:none!important;
+    width:44px!important;
+    height:44px!important;
+    min-width:44px!important;
+    padding:0!important;
+    margin:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    display:grid!important;
+    place-items:center!important;
+    color:#f4f0f5!important;
+    position:relative!important;
+    overflow:visible!important;
+    cursor:pointer!important;
+  }
+
+  .sidebar .mobile-menu-toggle:hover,
+  .sidebar .mobile-menu-toggle:focus,
+  .sidebar .mobile-menu-toggle:focus-visible,
+  .sidebar .mobile-menu-toggle:active,
+  .sidebar .mobile-menu-toggle.is-open{
+    border:0!important;
+    outline:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+  }
+
+  /* Kill every inherited decoration that was making the square. */
+  .sidebar .mobile-menu-toggle::before,
+  .sidebar .mobile-menu-toggle::after,
+  .sidebar .mobile-menu-toggle span::before,
+  .sidebar .mobile-menu-toggle span::after,
+  .sidebar .mobile-menu-toggle .menu-lines::before,
+  .sidebar .mobile-menu-toggle .menu-lines::after{
+    content:none!important;
+    display:none!important;
+  }
+
+  .sidebar .mobile-menu-toggle .menu-lines{
+    position:relative!important;
+    width:22px!important;
+    height:18px!important;
+    display:block!important;
+  }
+
+  .sidebar .mobile-menu-toggle .menu-lines i{
+    position:absolute!important;
+    left:0!important;
+    display:block!important;
+    width:22px!important;
+    height:1.8px!important;
+    margin:0!important;
+    padding:0!important;
+    border:0!important;
+    border-radius:999px!important;
+    background:#f3eff4!important;
+    opacity:1!important;
+    box-shadow:none!important;
+    transform-origin:center!important;
+    transition:transform .3s ease,opacity .2s ease!important;
+  }
+
+  .sidebar .mobile-menu-toggle .menu-lines i:nth-child(1){top:1px!important}
+  .sidebar .mobile-menu-toggle .menu-lines i:nth-child(2){top:8px!important}
+  .sidebar .mobile-menu-toggle .menu-lines i:nth-child(3){top:15px!important}
+
+  .sidebar .mobile-menu-toggle.is-open .menu-lines i:nth-child(1){
+    transform:translateY(7px) rotate(45deg)!important;
+  }
+  .sidebar .mobile-menu-toggle.is-open .menu-lines i:nth-child(2){
+    opacity:0!important;
+  }
+  .sidebar .mobile-menu-toggle.is-open .menu-lines i:nth-child(3){
+    transform:translateY(-7px) rotate(-45deg)!important;
+  }
+}
+
+
+/* ===== Reliable SVG hamburger: visible 3 lines -> clean X ===== */
+@media(max-width:900px){
+  .mobile-menu-toggle{
+    appearance:none!important;
+    -webkit-appearance:none!important;
+    width:46px!important;
+    height:46px!important;
+    min-width:46px!important;
+    padding:0!important;
+    margin:0!important;
+    border:0!important;
+    outline:0!important;
+    border-radius:0!important;
+    background:transparent!important;
+    box-shadow:none!important;
+    display:grid!important;
+    place-items:center!important;
+    position:relative!important;
+    overflow:visible!important;
+    color:#f3eff4!important;
+    cursor:pointer!important;
+  }
+
+  .mobile-menu-toggle::before,
+  .mobile-menu-toggle::after,
+  .mobile-menu-toggle span,
+  .mobile-menu-toggle i,
+  .mobile-menu-toggle .menu-lines{
+    display:none!important;
+    content:none!important;
+  }
+
+  .mobile-menu-toggle .hamburger-icon{
+    display:block!important;
+    width:24px!important;
+    height:18px!important;
+    overflow:visible!important;
+  }
+
+  .mobile-menu-toggle .hamburger-icon .bar{
+    fill:none!important;
+    stroke:#f3eff4!important;
+    stroke-width:1.8!important;
+    stroke-linecap:round!important;
+    vector-effect:non-scaling-stroke!important;
+    transition:transform .34s cubic-bezier(.2,.8,.2,1),opacity .2s ease!important;
+    transform-box:fill-box!important;
+    transform-origin:center!important;
+  }
+
+  .mobile-menu-toggle .hamburger-icon .bar-1{transform-origin:center!important}
+  .mobile-menu-toggle .hamburger-icon .bar-2{transform-origin:center!important}
+  .mobile-menu-toggle .hamburger-icon .bar-3{transform-origin:center!important}
+
+  .mobile-menu-toggle.is-open .hamburger-icon .bar-1{
+    transform:translateY(7.5px) rotate(45deg)!important;
+  }
+  .mobile-menu-toggle.is-open .hamburger-icon .bar-2{
+    opacity:0!important;
+  }
+  .mobile-menu-toggle.is-open .hamburger-icon .bar-3{
+    transform:translateY(-7.5px) rotate(-45deg)!important;
+  }
+
+  .mobile-menu-toggle:active{
+    transform:scale(.96)!important;
+  }
+}
+
+
+/* ===== Medium animated custom cursor ===== */
+@media (hover:hover) and (pointer:fine){
+  body.has-custom-cursor,
+  body.has-custom-cursor *{
+    cursor:none!important;
+  }
+
+  .custom-cursor{
+    position:fixed;
+    left:0;
+    top:0;
+    width:34px;
+    height:34px;
+    border:1px solid rgba(184,168,235,.82);
+    border-radius:50%;
+    pointer-events:none;
+    z-index:99999;
+    opacity:0;
+    transform:translate3d(-50%,-50%,0);
+    transition:
+      opacity .18s ease,
+      width .16s ease,
+      height .16s ease,
+      border-color .18s ease;
+    will-change:left,top,width,height;
+  }
+
+  .custom-cursor::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#b8a8eb;
+    box-shadow:0 0 10px rgba(184,168,235,.4);
+    transform:translate(-50%,-50%);
+  }
+
+  .custom-cursor.is-visible{
+    opacity:1;
+  }
+
+  .custom-cursor.is-hover{
+    width:42px;
+    height:42px;
+    border-color:rgba(184,168,235,.98);
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  .custom-cursor{display:none!important}
+  body.has-custom-cursor,body.has-custom-cursor *{cursor:auto!important}
+}
+
+
+/* ===== Project cover motion ===== */
+.project{
+  overflow:hidden;
+}
+.project-cover{
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+}
+.project-cover::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    115deg,
+    transparent 25%,
+    rgba(255,255,255,.12) 47%,
+    transparent 62%
+  );
+  transform:translateX(-120%);
+  transition:transform .85s cubic-bezier(.2,.75,.2,1);
+  pointer-events:none;
+  z-index:2;
+}
+.project-cover img{
+  transition:transform .75s cubic-bezier(.2,.75,.2,1), filter .5s ease;
+  will-change:transform;
+}
+.project:hover .project-cover img{
+  transform:scale(1.035);
+  filter:saturate(1.03) contrast(1.01);
+}
+.project:hover .project-cover::after{
+  transform:translateX(120%);
+}
+.project{
+  transition:transform .35s cubic-bezier(.2,.75,.2,1), box-shadow .35s ease;
+}
+.project:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 38px rgba(0,0,0,.18);
+}
+@media (hover:none){
+  .project:hover{
+    transform:none;
+    box-shadow:none;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .project,
+  .project-cover img,
+  .project-cover::after{
+    transition:none!important;
+    animation:none!important;
+  }
+}
+
+
+/* ===== Hero portrait motion & ambient effects ===== */
+.hero-art{
+  position:relative!important;
+  isolation:isolate;
+}
+
+/* Soft neon contour/glow behind the portrait */
+.hero-art::before{
+  content:"";
+  position:absolute;
+  inset:7% 9% 10% 12%;
+  border:1px solid rgba(184,168,235,.28);
+  border-radius:34px;
+  filter:blur(.2px);
+  box-shadow:
+    0 0 24px rgba(139,123,190,.18),
+    0 0 52px rgba(139,123,190,.10);
+  z-index:-2;
+  animation:heroContour 7s ease-in-out infinite;
+  pointer-events:none;
+}
+
+/* Floating portrait */
+.portrait{
+  animation:portraitFloat 5.8s ease-in-out infinite;
+  box-shadow:
+    0 0 0 1px rgba(184,168,235,.10),
+    0 0 22px rgba(139,123,190,.16),
+    0 20px 45px rgba(0,0,0,.18);
+  will-change:transform;
+}
+
+/* Moving light shimmer over the portrait */
+.portrait::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    115deg,
+    transparent 35%,
+    rgba(255,255,255,.13) 49%,
+    transparent 63%
+  );
+  transform:translateX(-120%);
+  z-index:3;
+  pointer-events:none;
+  animation:portraitShimmer 6.5s ease-in-out 1.2s infinite;
+}
+
+/* Existing purple half-round becomes an animated accent */
+.portrait::after{
+  animation:purpleOrbFloat 6s ease-in-out infinite;
+  transform-origin:center;
+  box-shadow:0 0 22px rgba(139,123,190,.16);
+  will-change:transform,opacity;
+}
+
+@keyframes portraitFloat{
+  0%,100%{transform:translate3d(0,0,0)}
+  25%{transform:translate3d(0,-5px,0)}
+  55%{transform:translate3d(0,-9px,0)}
+  78%{transform:translate3d(0,-3px,0)}
+}
+
+@keyframes portraitShimmer{
+  0%,62%{transform:translateX(-120%);opacity:0}
+  68%{opacity:1}
+  82%{transform:translateX(120%);opacity:1}
+  86%,100%{transform:translateX(120%);opacity:0}
+}
+
+@keyframes purpleOrbFloat{
+  0%,100%{transform:translate3d(0,0,0) scale(1);opacity:.78}
+  35%{transform:translate3d(-8px,-5px,0) scale(1.015);opacity:.88}
+  65%{transform:translate3d(5px,7px,0) scale(.985);opacity:.76}
+}
+
+@keyframes heroContour{
+  0%,100%{
+    transform:scale(1);
+    border-color:rgba(184,168,235,.22);
+    box-shadow:0 0 22px rgba(139,123,190,.13),0 0 46px rgba(139,123,190,.07);
+  }
+  50%{
+    transform:scale(1.018);
+    border-color:rgba(184,168,235,.40);
+    box-shadow:0 0 28px rgba(139,123,190,.20),0 0 58px rgba(139,123,190,.11);
+  }
+}
+
+/* Keep motion elegant on touch devices too, but slightly quieter. */
+@media(max-width:900px){
+  .hero-art::before{
+    inset:6% 7% 8% 8%;
+  }
+  .portrait{
+    animation-duration:6.8s;
+  }
+  .portrait::before{
+    animation-duration:7.8s;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  .hero-art::before,
+  .portrait,
+  .portrait::before,
+  .portrait::after{
+    animation:none!important;
+  }
 }
 
 </style>
+
+<link rel="icon" type="image/png" sizes="128x128" href="images/favicon.png">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png">
+
 </head>
 <body>
 <div class="shell">
 <aside class="sidebar">
-  <div class="logo">d<i>.</i></div>
-  <nav class="nav">
-    <a class="active" href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#process">Process</a>
-    <a href="#skills">Skills</a>
-    <a href="#resume">Resume</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <div class="side-bottom">© 2026 Dharti Patel<br>Designed with curiosity & purpose.</div>
+ <div class="logo">d<i>.</i></div>
+    <button class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+  <svg class="hamburger-icon" viewBox="0 0 24 18" aria-hidden="true">
+    <line class="bar bar-1" x1="1.5" y1="1.5" x2="22.5" y2="1.5"></line>
+    <line class="bar bar-2" x1="1.5" y1="9" x2="16.5" y2="9"></line>
+    <line class="bar bar-3" x1="1.5" y1="16.5" x2="22.5" y2="16.5"></line>
+  </svg>
+</button>
+ <nav class="nav">
+ <a class="active" href="#home">Home</a>
+ <a href="#about">About</a>
+ <a href="#work">Work</a>
+ <a href="#process">Process</a>
+ <a href="#skills">Skills</a>
+ <a href="#resume">Resume</a>
+ <a href="#contact">Contact</a>
+ </nav>
+ <div class="side-bottom">© 2026 Dharti Patel<br>Designed with curiosity & purpose.</div>
 </aside>
+<div class="mobile-menu-scrim" aria-hidden="true"></div>
 
 <main>
 <section class="hero" id="home">
  <div>
-  <div class="label">Hello, I'm</div>
-  <h1>Dharti<br>Patel</h1>
-  <div class="role">UI/UX Designer</div>
-  <p class="intro">I design intuitive and meaningful digital experiences that connect, inspire, and create impact.</p>
-  <div class="actions"><a class="btn" href="#work">View My Work ↗</a><a class="text-btn" href="#about">About Me</a></div>
+ <h1>Dharti<br>Patel</h1>
+ <div class="role">UI/UX Designer</div>
+ <p class="intro">Intuitive design and expressive digital experiences drive my work — creating digital products that connect with people, communicate clearly, and feel effortless to use.</p>
+ <div class="actions"><a class="btn" href="#work">View My Work ↗</a><a class="text-btn" href="#about">About Me</a></div>
  </div>
  <div class="hero-art">
-   <div class="portrait"><img src="images/home-dharti.png" alt="Dharti Patel professional portrait"></div>
-   <div class="quote-card">
-     I believe good design isn't just about how it looks, but how naturally it feels.
-     <div class="signature">Dharti <span>♥</span></div>
-   </div>
+ <div class="portrait"><img src="images/home-dharti.png" alt="Dharti Patel professional portrait"></div>
+ <div class="quote-card">
+ I believe good design isn't just about how it looks, but how naturally it feels.
+ <div class="signature">Dharti</div>
+ </div>
  </div>
 </section>
-<section class="about" id="about">
- <div>
-  <div class="label">About Me</div>
-  <h2>Designing with empathy, building with purpose.</h2>
-  <p>I'm Dharti, a UI/UX Designer with an M.Sc. IT background in Mobile Application & UI Development. I'm passionate about understanding how people interact with technology and transforming ideas and complex problems into simple, intuitive, and meaningful digital experiences.</p>
-  <p>For me, design is more than making something visually appealing. Every screen, interaction, and decision should have a purpose.</p>
+<section class="about about-editorial" id="about">
+ <div class="about-editorial-copy">
+ <div class="label">About Me</div>
+ <div class="about-kicker">A designer who turns complexity into clarity.</div>
+ <h2>Thoughtful by nature.<br>Intentional by design.</h2>
+
+ <p>I’m Dharti, a UI/UX Designer with an M.Sc. IT background in Mobile Application & UI Development. I enjoy understanding how people interact with technology and turning complex problems into clear, intuitive, and meaningful experiences.</p>
+
+ <p>I care about what happens behind the interface—the flow, hierarchy, decisions, and details that make an experience feel effortless.</p>
+
+ <div class="about-signature-line">
+ <span></span>
+ <b>Design with intent.</b>
+ </div>
  </div>
 
- <div class="about-values-panel">
-   <div class="about-values-orbit orbit-one"></div>
-   <div class="about-values-orbit orbit-two"></div>
+ <div class="about-principles">
+ <div class="principles-top">
+ <span>DESIGN PRINCIPLES</span>
+ <span>04 FOCUS AREAS</span>
+ </div>
 
-   <div class="about-values-heading">
-     <span>What guides my design</span>
-     <span class="about-values-line"></span>
-   </div>
+ <div class="principle-grid">
+ <article class="principle-tile">
+ <div class="principle-meta"><span>01</span><i>+</i></div>
+ <h3>Clarity</h3>
+ <p>Make the complex feel simple, without losing what matters.</p>
+ </article>
 
-   <div class="about-value-grid">
-     <div class="about-value-card">
-       <div class="about-value-icon">✦</div>
-       <div><strong>Simplicity</strong><p>Making complex things feel easy.</p></div>
-     </div>
-     <div class="about-value-card">
-       <div class="about-value-icon">♡</div>
-       <div><strong>Empathy</strong><p>Understanding people behind every interaction.</p></div>
-     </div>
-     <div class="about-value-card">
-       <div class="about-value-icon">◎</div>
-       <div><strong>Purpose</strong><p>Designing with intention, not decoration.</p></div>
-     </div>
-     <div class="about-value-card">
-       <div class="about-value-icon">↗</div>
-       <div><strong>Growth</strong><p>Always learning and improving.</p></div>
-     </div>
-   </div>
+ <article class="principle-tile">
+ <div class="principle-meta"><span>02</span><i>+</i></div>
+ <h3>Empathy</h3>
+ <p>Design from real needs, behaviours, and context—not assumptions.</p>
+ </article>
 
-   <div class="about-values-footer">
-     <span>CURIOUS BY NATURE</span>
-     <span>THOUGHTFUL BY DESIGN</span>
-   </div>
+ <article class="principle-tile">
+ <div class="principle-meta"><span>03</span><i>+</i></div>
+ <h3>Intent</h3>
+ <p>Every element earns its place and every decision has a reason.</p>
+ </article>
+
+ <article class="principle-tile">
+ <div class="principle-meta"><span>04</span><i>+</i></div>
+ <h3>Evolution</h3>
+ <p>Test, learn, refine, and keep improving the experience.</p>
+ </article>
+ </div>
+
+ <div class="principles-note">
+ <span>04 PRINCIPLES</span>
+ <strong>Observe · Simplify · Shape · Refine</strong>
+ <span class="note-line"></span>
+ </div>
  </div>
 </section>
 <section id="work">
- <div class="work-head"><div><div class="label">Featured Projects</div><h2>Selected work.</h2></div></div>
+ <div class="work-head"><div><div class="label">Selected Projects</div><h2>Ideas into experiences.</h2></div></div>
  <p class="muted" style="max-width:760px;margin:0 0 35px;">A selection of UI/UX work from my internship experience, designed with clarity, empathy, and purpose.</p>
  <div class="projects">
-   <article class="project">
-     <div class="project-cover"><img src="images/caresphere.png" alt="caresphere digital telemedicine application project cover"></div>
-     <div class="project-info">
-       <h3>CareSphere</h3>
-       <div class="tags">INTERNSHIP · UI/UX DESIGN · TELEMEDICINE</div>
-       <p class="muted">A digital telemedicine application that connects patients with doctors, supports appointment booking, health records, consultations, and health management.</p>
-       <div class="project-actions">
-         <a class="primary" href="https://www.figma.com/design/c0CU2YLxC1yyQhFBhP2NgR/CARESPHERE?node-id=0-1&p=f&t=XHVz2RohrmD52Ery-0" target="_blank" rel="noopener">View Figma ↗</a>
-       </div>
-     </div>
-   </article>
-   <article class="project">
-     <div class="project-cover"><img src="images/wandersync.png" alt="WanderSync travel and hospitality platform project cover"></div>
-     <div class="project-info">
-       <h3>WanderSync</h3>
-       <div class="tags">INTERNSHIP · UI/UX DESIGN · TRAVEL & HOSPITALITY</div>
-       <p class="muted">A travel and hospitality platform designed to simplify destination discovery, trip planning, bookings, itineraries, and travel details in one place.</p>
-       <div class="project-actions">
-         <a class="primary" href="https://www.figma.com/design/LkgtJwuOg7HasXfhJjMTD4/second-project-infotact?t=XHVz2RohrmD52Ery-0" target="_blank" rel="noopener">View Figma ↗</a>
-       </div>
-     </div>
-   </article>
+ <article class="project">
+ <div class="project-cover"><img src="images/caresphere.png" alt="CareSphere digital telemedicine project cover"></div>
+ <div class="project-info">
+ <h3>CareSphere</h3>
+ <div class="tags">INTERNSHIP · UI/UX DESIGN · TELEMEDICINE</div>
+ <p class="muted">A digital telemedicine application that connects patients with doctors, supports appointment booking, health records, consultations, and health management.</p>
+ <div class="project-actions">
+ <a class="primary" href="https://www.figma.com/design/c0CU2YLxC1yyQhFBhP2NgR/CARESPHERE?node-id=0-1&p=f&t=XHVz2RohrmD52Ery-0" target="_blank" rel="noopener">View Figma ↗</a>
+ </div>
+ </div>
+ </article>
+ <article class="project">
+ <div class="project-cover"><img src="images/wandersync.png" alt="WanderSync travel and hospitality platform project cover"></div>
+ <div class="project-info">
+ <h3>WanderSync</h3>
+ <div class="tags">INTERNSHIP · UI/UX DESIGN · TRAVEL & HOSPITALITY</div>
+ <p class="muted">A travel and hospitality platform designed to simplify destination discovery, trip planning, bookings, itineraries, and travel details in one place.</p>
+ <div class="project-actions">
+ <a class="primary" href="https://www.figma.com/design/LkgtJwuOg7HasXfhJjMTD4/second-project-infotact?t=XHVz2RohrmD52Ery-0" target="_blank" rel="noopener">View Figma ↗</a>
+ </div>
+ </div>
+ </article>
  </div>
 </section>
 
@@ -514,23 +2795,25 @@ a,.btn,button,select,input,textarea{ -webkit-tap-highlight-color:transparent }
 </section>
 
 <section id="process">
- <div class="label">My Process</div><h2>From problem to possibility.</h2>
+ <div class="label">MY PROCESS</div>
+ <h2>From insight to interface.</h2>
  <div class="process-grid">
-  <div class="step"><div class="num">01</div><h3>Understand</h3><p class="muted">Understand users, problems, and goals.</p></div>
-  <div class="step"><div class="num">02</div><h3>Research</h3><p class="muted">Explore needs, behaviours, and pain points.</p></div>
-  <div class="step"><div class="num">03</div><h3>Define</h3><p class="muted">Identify the right problem to solve.</p></div>
-  <div class="step"><div class="num">04</div><h3>Explore</h3><p class="muted">Create flows, ideas, and wireframes.</p></div>
-  <div class="step"><div class="num">05</div><h3>Design</h3><p class="muted">Transform ideas into intuitive interfaces.</p></div>
-  <div class="step"><div class="num">06</div><h3>Refine</h3><p class="muted">Review, improve, and polish the experience.</p></div>
+ <div class="step"><div class="num">01</div><h3>Understand</h3><p class="muted">Understand users, problems, and goals.</p></div>
+ <div class="step"><div class="num">02</div><h3>Research</h3><p class="muted">Explore needs, behaviours, and opportunities.</p></div>
+ <div class="step"><div class="num">03</div><h3>Define</h3><p class="muted">Frame the core problem and establish a clear direction.</p></div>
+ <div class="step"><div class="num">04</div><h3>Ideate</h3><p class="muted">Explore flows, concepts, wireframes, and possible solutions.</p></div>
+ <div class="step"><div class="num">05</div><h3>Create</h3><p class="muted">Craft intuitive interfaces, visual systems, and interactions.</p></div>
+ <div class="step"><div class="num">06</div><h3>Evolve</h3><p class="muted">Test, refine, and polish the experience with purpose.</p></div>
  </div>
 </section>
 
 <section class="skills" id="skills">
- <div class="label">Skills & Tools</div><h2>What I bring to the process.</h2>
+ <div class="label">SKILLS &amp; TOOLS</div>
+ <h2>What I bring to the table.</h2>
  <div class="skill-grid">
-  <div class="skill-box"><h3>UX Design</h3><p>User Research<br>User Personas<br>User Journeys<br>User Flows<br>Information Architecture<br>Wireframing</p></div>
-  <div class="skill-box"><h3>UI Design</h3><p>Visual Design<br>Typography<br>Responsive Design<br>Design Systems<br>Components<br>Accessibility</p></div>
-  <div class="skill-box"><h3>Tools</h3><p>Figma<br>FigJam<br></p></div>
+ <div class="skill-box"><h3>UX Design</h3><p>User Research<br>User Personas<br>User Journeys<br>User Flows<br>Information Architecture<br>Wireframing</p></div>
+ <div class="skill-box"><h3>UI Design</h3><p>Visual Design<br>Typography<br>Responsive Design<br>Design Systems<br>Components<br>Accessibility</p></div>
+ <div class="skill-box"><h3>Tools</h3><p>Figma<br>FigJam</p></div>
  </div>
 </section>
 
@@ -540,110 +2823,128 @@ a,.btn,button,select,input,textarea{ -webkit-tap-highlight-color:transparent }
  <div class="personal-card"><p>Sometimes the smallest detail can completely change how an experience feels.</p></div>
 </section>
 
-<section class="resume" id="resume">
+<section class="resume resume-reference" id="resume">
   <div class="resume-copy">
-    <div class="label">My Resume</div>
-    <h2>A little more about my journey.</h2>
-    <p class="muted">Explore my education, UI/UX experience, skills, and selected work in my resume.</p>
-    <a class="btn" href="resume.pdf" download="Dharti-Patel-Resume.pdf">Download My Resume ↓</a>
-    <a class="resume-link" href="resume.pdf" target="_blank" rel="noopener">View Resume ↗</a>
+    <div class="label">MY RESUME</div>
+    <h2>A little more about<br>my journey.</h2>
+    <p class="muted">A concise look at my education, UI/UX experience, skills, and selected work.</p>
   </div>
+
   <div class="resume-card">
-    <span>PDF</span>
+    <div class="resume-card-top">
+      <span class="resume-badge">PDF</span>
+      <span class="resume-status">UI/UX DESIGNER</span>
+    </div>
+
     <strong>Dharti Patel</strong>
-    <small>UI/UX Designer · Resume</small>
-    <div class="resume-lines"></div>
+    <small>Resume · Education · Experience · Projects</small>
+
+    <div class="resume-card-divider"></div>
+
+    <div class="resume-actions">
+      <a class="resume-action-primary" href="resume.pdf" download="Dharti-Patel-Resume.pdf">
+        <span>Download Resume</span><b>↓</b>
+      </a>
+      <a class="resume-action-secondary" href="resume.pdf" target="_blank" rel="noopener">
+        <span>View Resume</span><b>↗</b>
+      </a>
+    </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
-  <div class="label">Let's Connect</div>
-  <h2>Let's talk about my next opportunity.</h2>
-  <p>I’m currently looking for a UI/UX Designer opportunity where I can learn, contribute, and create meaningful digital experiences with a collaborative team.</p>
+ <div class="label">Let's Connect</div>
+ <h2>Let's come together<br>and solve real world problems.</h2>
+ <p>I’m currently looking for a UI/UX Designer opportunity where I can learn, contribute, and create meaningful digital experiences with a collaborative team.</p>
 
-  <div class="contact-grid">
-    <div class="contact-info">
-      <div class="label">Get in touch</div>
+ <div class="contact-grid">
+ <div class="contact-info">
+ <div class="label">Get in touch</div>
 
-      <a class="contact-item" href="mailto:dhartipatel.it@gmail.com">
-        <span class="contact-icon">✉</span>
-        <span><small>EMAIL</small><strong>dhartipatel.it@gmail.com</strong></span>
-      </a>
+ <a class="contact-item" href="mailto:dhartipatel.it@gmail.com">
+ <span class="contact-icon email-icon" aria-hidden="true">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3.5" y="5.5" width="17" height="13" rx="2" stroke="#7564A7" stroke-width="1.8"/>
+    <path d="M5.5 7.5L12 12.5L18.5 7.5" stroke="#7564A7" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</span>
+ <span><small>EMAIL</small><strong>dhartipatel.it@gmail.com</strong></span>
+ </a>
 
-      <a class="contact-item" href="https://www.linkedin.com/in/dharti-patel-976964321" target="_blank" rel="noopener">
-        <span class="contact-icon">in</span>
-        <span><small>LINKEDIN</small><strong>linkedin.com/in/dharti-patel-976964321</strong></span>
-      </a>
+ <a class="contact-item" href="https://www.linkedin.com/in/dharti-patel-976964321" target="_blank" rel="noopener">
+ <span class="contact-icon">in</span>
+ <span><small>LINKEDIN</small><strong>Dharti Patel</strong></span>
+ </a>
 
-      <div class="availability-card">
-        <b>✦ Currently open to UI/UX opportunities.</b>
-        <span>Open to full-time roles, internships, junior UI/UX positions, and opportunities where I can grow as a designer.</span>
-      </div>
-    </div>
+ <div class="availability-card">
+ <b> Currently open to UI/UX opportunities.</b>
+ <span>Open to full-time roles, internships, junior UI/UX positions, and opportunities where I can grow as a designer.</span>
+ </div>
+ </div>
 
-    <form class="inquiry-form" action="https://formsubmit.co/dhartipatel.it@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="New UI/UX Job Opportunity — Dharti Patel Portfolio">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="true">
-      <input type="text" name="_honey" style="display:none">
+ <form class="inquiry-form" action="https://formsubmit.co/dhartipatel.it@gmail.com" method="POST">
+ <input type="hidden" name="_subject" value="New UI/UX Job Opportunity — Dharti Patel Portfolio">
+ <input type="hidden" name="_template" value="table">
+ <input type="hidden" name="_captcha" value="true">
+ <input type="text" name="_honey" style="display:none">
 
-      <div class="form-row">
-        <label>Recruiter / Your Name <span>*</span>
-          <input name="name" type="text" placeholder="Your name" required>
-        </label>
-        <label>Email Address <span>*</span>
-          <input name="email" type="email" placeholder="you@company.com" required>
-        </label>
-      </div>
+ <div class="form-row">
+ <label>Recruiter / Your Name <span>*</span>
+ <input name="name" type="text" placeholder="Your name" required>
+ </label>
+ <label>Email Address <span>*</span>
+ <input name="email" type="email" placeholder="you@company.com" required>
+ </label>
+ </div>
 
-      <div class="form-row">
-        <label>What are you contacting me about? <span>*</span>
-          <select name="opportunity" required>
-            <option value="" selected disabled>Select an option</option>
-            <option>UI/UX Designer Job Opportunity</option>
-            <option>Junior UI/UX Role</option>
-            <option>UI/UX Internship Opportunity</option>
-            <option>Freelance / Contract Opportunity</option>
-            <option>Design Collaboration</option>
-            <option>Other</option>
-          </select>
-        </label>
+ <div class="form-row">
+ <label>What are you contacting me about? <span>*</span>
+ <select name="opportunity" required>
+ <option value="" selected disabled>Select an option</option>
+ <option>UI/UX Designer Job Opportunity</option>
+ <option>Junior UI/UX Role</option>
+ <option>UI/UX Internship Opportunity</option>
+ <option>Freelance / Contract Opportunity</option>
+ <option>Design Collaboration</option>
+ <option>Other</option>
+ </select>
+ </label>
 
-        <label>Work Type
-          <select name="work_type">
-            <option value="" selected disabled>Select preference</option>
-            <option>Full-time</option>
-            <option>Part-time</option>
-            <option>Internship</option>
-            <option>Freelance / Contract</option>
-          </select>
-        </label>
-      </div>
+ <label>Work Type
+ <select name="work_type">
+ <option value="" selected disabled>Select preference</option>
+ <option>Full-time</option>
+ <option>Part-time</option>
+ <option>Internship</option>
+ <option>Freelance / Contract</option>
+ </select>
+ </label>
+ </div>
 
-      <div class="form-row">
-        <label>Work Mode
-          <select name="work_mode">
-            <option value="" selected disabled>Select preference</option>
-            <option>Remote</option>
-            <option>Hybrid</option>
-            <option>On-site</option>
-            <option>Open to discussion</option>
-          </select>
-        </label>
+ <div class="form-row">
+ <label>Work Mode
+ <select name="work_mode">
+ <option value="" selected disabled>Select preference</option>
+ <option>Remote</option>
+ <option>Hybrid</option>
+ <option>On-site</option>
+ <option>Open to discussion</option>
+ </select>
+ </label>
 
-        <label>Company / Organization
-          <input name="company" type="text" placeholder="Company name">
-        </label>
-      </div>
+ <label>Company / Organization
+ <input name="company" type="text" placeholder="Company name">
+ </label>
+ </div>
 
-      <label>Tell me about the opportunity <span>*</span>
-        <textarea name="message" rows="6" placeholder="Role, team, location, responsibilities, or anything you'd like me to know..." required></textarea>
-      </label>
+ <label>Tell me about the opportunity <span>*</span>
+ <textarea name="message" rows="6" placeholder="Role, team, location, responsibilities, or anything you'd like me to know..." required></textarea>
+ </label>
 
-      <button class="btn form-submit" type="submit">Send Opportunity Details ↗</button>
-      <p class="form-note">Your message will be sent to Dharti’s email.</p>
-    </form>
-  </div>
+ <button class="btn form-submit" type="submit">Send Opportunity Details ↗</button>
+ <p class="form-note">Your message will be sent to Dharti’s email.</p>
+ </form>
+ </div>
 </section>
 <footer>© 2026 Dharti Patel — UI/UX Designer</footer>
 </main>
@@ -654,105 +2955,202 @@ a,.btn,button,select,input,textarea{ -webkit-tap-highlight-color:transparent }
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
-  const sections = navLinks
-    .map(link => document.querySelector(link.getAttribute('href')))
-    .filter(Boolean);
+ const navLinks = [...document.querySelectorAll('.nav a[href^="#"]')];
+ const sections = navLinks
+ .map(link => document.querySelector(link.getAttribute('href')))
+ .filter(Boolean);
 
-  // Initial reveal state.
-  sections.forEach(section => section.classList.add('reveal'));
-  requestAnimationFrame(() => {
-    sections.slice(0, 2).forEach(section => section.classList.add('is-visible'));
-  });
+ // Initial reveal state.
+ sections.forEach(section => section.classList.add('reveal'));
+ requestAnimationFrame(() => {
+ sections.slice(0, 2).forEach(section => section.classList.add('is-visible'));
+ });
 
-  const setActive = (id) => {
-    navLinks.forEach(link => {
-      const active = link.getAttribute('href') === '#' + id;
-      link.classList.toggle('active', active);
-      if (active) {
-        link.setAttribute('aria-current', 'page');
-      } else {
-        link.removeAttribute('aria-current');
-      }
-    });
+ const setActive = (id) => {
+ navLinks.forEach(link => {
+ const active = link.getAttribute('href') === '#' + id;
+ link.classList.toggle('active', active);
+ if (active) {
+ link.setAttribute('aria-current', 'page');
+ } else {
+ link.removeAttribute('aria-current');
+ }
+ });
+ };
+
+ // Make the purple sparkle follow whichever section is currently visible.
+ const observer = new IntersectionObserver((entries) => {
+ entries.forEach(entry => {
+ if (entry.isIntersecting) {
+ entry.target.classList.add('is-visible');
+ if (entry.intersectionRatio >= 0.38) setActive(entry.target.id);
+ }
+ });
+ }, { rootMargin: '-18% 0px -58% 0px', threshold: [0.15, 0.38, 0.65] });
+
+ sections.forEach(section => observer.observe(section));
+
+ // Keep navigation synchronized during fast scrolls.
+ let ticking = false;
+ window.addEventListener('scroll', () => {
+ if (ticking) return;
+ ticking = true;
+ requestAnimationFrame(() => {
+ const midpoint = window.innerHeight * 0.36;
+ let current = sections[0];
+ for (const section of sections) {
+ const rect = section.getBoundingClientRect();
+ if (rect.top <= midpoint && rect.bottom >= midpoint) {
+ current = section;
+ break;
+ }
+ }
+ if (current) {
+ current.classList.add('is-visible');
+ setActive(current.id);
+ }
+ ticking = false;
+ });
+ }, {passive:true});
+
+ // Navigation tap: smooth scroll and subtle click emphasis.
+ navLinks.forEach(link => {
+ link.addEventListener('click', (event) => {
+ const target = document.querySelector(link.getAttribute('href'));
+ if (!target) return;
+ event.preventDefault();
+ setActive(target.id);
+ target.classList.add('is-visible');
+ target.scrollIntoView({behavior:'smooth', block:'start'});
+ // Keep the nav position stable; the CSS handles active/hover feedback.
+ });
+ });
+
+ // Ripple feedback for touch/clickable controls.
+ document.querySelectorAll('.btn, .text-btn, .resume-link, .project-actions a').forEach(el => {
+ el.style.position = el.style.position || 'relative';
+ el.style.overflow = 'hidden';
+ el.addEventListener('pointerdown', (event) => {
+ const rect = el.getBoundingClientRect();
+ const size = Math.max(rect.width, rect.height);
+ const ripple = document.createElement('span');
+ ripple.className = 'ripple';
+ ripple.style.width = ripple.style.height = size + 'px';
+ ripple.style.left = (event.clientX - rect.left - size / 2) + 'px';
+ ripple.style.top = (event.clientY - rect.top - size / 2) + 'px';
+ el.appendChild(ripple);
+ ripple.addEventListener('animationend', () => ripple.remove());
+ });
+ });
+
+ // Cards lift gently when touched.
+ document.querySelectorAll('.project, .contact-item').forEach(card => {
+ card.addEventListener('pointerdown', () => card.style.transform = 'translateY(-3px) scale(.995)');
+ const reset = () => card.style.transform = '';
+ card.addEventListener('pointerup', reset);
+ card.addEventListener('pointercancel', reset);
+ card.addEventListener('pointerleave', reset);
+ });
+
+ // Show home as the first active section.
+ setActive('home');
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const nav = document.querySelector('.sidebar .nav');
+  const scrim = document.querySelector('.mobile-menu-scrim');
+
+  if (!toggle || !nav || !scrim) return;
+
+  const closeMenu = () => {
+    nav.classList.remove('is-open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded','false');
+    toggle.setAttribute('aria-label','Open navigation');
+    scrim.classList.remove('is-open');
   };
 
-  // Make the purple sparkle follow whichever section is currently visible.
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        if (entry.intersectionRatio >= 0.38) setActive(entry.target.id);
-      }
-    });
-  }, { rootMargin: '-18% 0px -58% 0px', threshold: [0.15, 0.38, 0.65] });
+  const openMenu = () => {
+    nav.classList.add('is-open');
+    toggle.classList.add('is-open');
+    toggle.setAttribute('aria-expanded','true');
+    toggle.setAttribute('aria-label','Close navigation');
+    scrim.classList.add('is-open');
+  };
 
-  sections.forEach(section => observer.observe(section));
+  toggle.addEventListener('click', () => {
+    nav.classList.contains('is-open') ? closeMenu() : openMenu();
+  });
 
-  // Keep navigation synchronized during fast scrolls.
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(() => {
-      const midpoint = window.innerHeight * 0.36;
-      let current = sections[0];
-      for (const section of sections) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= midpoint && rect.bottom >= midpoint) {
-          current = section;
-          break;
-        }
-      }
-      if (current) {
-        current.classList.add('is-visible');
-        setActive(current.id);
-      }
-      ticking = false;
-    });
-  }, {passive:true});
+  scrim.addEventListener('click', closeMenu);
 
-  // Navigation tap: smooth scroll and subtle click emphasis.
-  navLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => closeMenu());
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const links = document.querySelectorAll('.sidebar .nav a[href^="#"]');
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
       const target = document.querySelector(link.getAttribute('href'));
       if (!target) return;
-      event.preventDefault();
-      setActive(target.id);
-      target.classList.add('is-visible');
-      target.scrollIntoView({behavior:'smooth', block:'start'});
-      // Keep the nav position stable; the CSS handles active/hover feedback.
+      e.preventDefault();
+      const header = document.querySelector('.sidebar');
+      const offset = header ? header.getBoundingClientRect().height : 0;
+      const y = target.getBoundingClientRect().top + window.pageYOffset - offset - 8;
+      window.scrollTo({top:y, behavior:'smooth'});
     });
   });
+});
+</script>
 
-  // Ripple feedback for touch/clickable controls.
-  document.querySelectorAll('.btn, .text-btn, .resume-link, .project-actions a').forEach(el => {
-    el.style.position = el.style.position || 'relative';
-    el.style.overflow = 'hidden';
-    el.addEventListener('pointerdown', (event) => {
-      const rect = el.getBoundingClientRect();
-      const size = Math.max(rect.width, rect.height);
-      const ripple = document.createElement('span');
-      ripple.className = 'ripple';
-      ripple.style.width = ripple.style.height = size + 'px';
-      ripple.style.left = (event.clientX - rect.left - size / 2) + 'px';
-      ripple.style.top = (event.clientY - rect.top - size / 2) + 'px';
-      el.appendChild(ripple);
-      ripple.addEventListener('animationend', () => ripple.remove());
-    });
+<div class="custom-cursor" aria-hidden="true"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cursor = document.querySelector('.custom-cursor');
+  const finePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if (!cursor || !finePointer) return;
+
+  document.body.classList.add('has-custom-cursor');
+  let x = innerWidth / 2, y = innerHeight / 2;
+  let tx = x, ty = y;
+
+  document.addEventListener('pointermove', e => {
+    tx = e.clientX;
+    ty = e.clientY;
+    cursor.classList.add('is-visible');
+  }, {passive:true});
+
+  document.addEventListener('mouseleave', () => cursor.classList.remove('is-visible'));
+  document.addEventListener('pointerdown', () => cursor.classList.add('is-hover'));
+  document.addEventListener('pointerup', () => cursor.classList.remove('is-hover'));
+
+  document.querySelectorAll('a,button,input,select,textarea,.project,.principle-tile').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('is-hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('is-hover'));
   });
 
-  // Cards lift gently when touched.
-  document.querySelectorAll('.project, .contact-item').forEach(card => {
-    card.addEventListener('pointerdown', () => card.style.transform = 'translateY(-3px) scale(.995)');
-    const reset = () => card.style.transform = '';
-    card.addEventListener('pointerup', reset);
-    card.addEventListener('pointercancel', reset);
-    card.addEventListener('pointerleave', reset);
-  });
-
-  // Show home as the first active section.
-  setActive('home');
+  function animate(){
+    x += (tx-x)*0.2;
+    y += (ty-y)*0.2;
+    cursor.style.left = x + 'px';
+    cursor.style.top = y + 'px';
+    requestAnimationFrame(animate);
+  }
+  animate();
 });
 </script>
 
